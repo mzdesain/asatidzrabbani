@@ -1,0 +1,3033 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asatidz Rabbani Pontren JB</title>
+  <meta name="theme-color" content="#0284c7" />
+  <meta name="application-name" content="Asatidz JB" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Asatidz JB" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 10px 25px -5px rgba(2, 132, 199, 0.14), 0 8px 10px -6px rgba(217, 119, 6, 0.1)',
+            card: '0 4px 16px -2px rgba(14, 165, 233, 0.1), 0 2px 6px -1px rgba(202, 138, 4, 0.08)',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f0f9ff;
+      color: #0f172a;
+    }
+    .gold-gradient {
+      background-image: linear-gradient(135deg, #fef08a 0%, #eab308 52%, #b45309 100%);
+    }
+    .gold-gradient-text {
+      background-image: linear-gradient(135deg, #facc15 0%, #d97706 55%, #92400e 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    html { -webkit-text-size-adjust: 100%; }
+    body { overflow-x: hidden; }
+    @media (max-width: 639px) {
+      input[type="text"], input[type="number"], input[type="date"], input[type="month"],
+      input[type="password"], select { font-size: 16px !important; }
+    }
+    footer { padding-bottom: max(1.25rem, env(safe-area-inset-bottom)); }
+    @keyframes popOverlayIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes popCardIn { 0% { opacity: 0; transform: translateY(14px) scale(.92); } 60% { opacity: 1; transform: translateY(-2px) scale(1.02); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes popOut { to { opacity: 0; transform: scale(.95); } }
+    @keyframes popDraw { from { stroke-dashoffset: 60; } to { stroke-dashoffset: 0; } }
+    @keyframes popRing { 0% { transform: scale(.6); opacity: .7; } 100% { transform: scale(1.5); opacity: 0; } }
+    @keyframes popBar { from { width: 100%; } to { width: 0%; } }
+    @keyframes popSpin { to { transform: rotate(360deg); } }
+    .pop-overlay { animation: popOverlayIn .18s ease-out forwards; }
+    .pop-card { animation: popCardIn .38s cubic-bezier(.2,.9,.3,1.2) forwards; }
+    .pop-overlay.pop-out { animation: popOut .16s ease-in forwards; }
+    .pop-draw { stroke-dasharray: 60; stroke-dashoffset: 60; animation: popDraw .5s .15s ease-out forwards; }
+    .pop-ring { animation: popRing 1.4s ease-out infinite; }
+    .pop-spin { animation: popSpin .9s linear infinite; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.25s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-sky-50 text-slate-800 antialiased">
+  <!-- Header Navigasi Utama (Biru Langit & Putih dengan Aksen Emas Gradien) -->
+  <header class="sm:sticky sm:top-0 z-30 bg-white/95 backdrop-blur-md border-b border-sky-200 shadow-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <!-- Identitas Aplikasi & Status Koneksi -->
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-2xl gold-gradient text-sky-950 flex items-center justify-center shadow-soft ring-2 ring-amber-300 shrink-0">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </div>
+        <div class="min-w-0">
+          <div class="flex items-center gap-2 flex-wrap">
+            <h1 class="text-lg sm:text-xl font-extrabold text-sky-900 tracking-tight">
+              Asatidz Rabbani <span class="gold-gradient-text font-black">Pontren JB</span>
+            </h1>
+            <span id="onlineStatusBadge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-sky-100 text-sky-800 border border-sky-200">
+              <span id="onlineStatusDot" class="w-2 h-2 rounded-full bg-sky-500"></span>
+              <span id="onlineStatusText">Menghubungkan Cloud...</span>
+            </span>
+            <button id="installAppBtn" type="button" onclick="handleInstallApp()"
+              class="hidden inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold gold-gradient text-sky-950 border border-amber-300 shadow-xs cursor-pointer hover:opacity-95">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14" />
+              </svg>
+              <span>Pasang Aplikasi</span>
+            </button>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-500 truncate">Mutaba'ah Harian • Shalat Rawatib, Baca Al-Qur'an &amp; Shalat Malam</p>
+        </div>
+      </div>
+
+      <!-- Tab Navigasi Utama -->
+      <nav aria-label="Navigasi Utama" class="grid grid-cols-2 sm:flex items-center bg-sky-100 p-1 rounded-2xl border border-sky-200 w-full sm:w-auto shrink-0">
+        <button id="tabBtnChecklist" type="button" onclick="switchTab('checklist')"
+          class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-all cursor-pointer gold-gradient text-sky-950 shadow-xs">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+          </svg>
+          <span>Ceklist Harian</span>
+        </button>
+
+        <button id="tabBtnRecap" type="button" onclick="switchTab('recap')"
+          class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all cursor-pointer text-sky-900 hover:bg-white">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+          <span>Rekap Pimpinan</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Konten Utama -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+    <!-- ===================================================================== -->
+    <!-- TAB 1: CEKLIST HARIAN GURU                                            -->
+    <!-- ===================================================================== -->
+    <section id="checklistSection" class="space-y-6 animate-fade-in">
+      <!-- Banner Salam, Foto/Logo Bebas Diganti & Ringkasan Progres -->
+      <div class="bg-sky-500 rounded-3xl p-5 sm:p-7 text-white shadow-soft border border-sky-400 relative overflow-hidden">
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
+          <!-- Foto / Logo Pondok (Dapat Diganti Kapan Saja) -->
+          <div class="lg:col-span-4">
+            <div class="relative rounded-2xl overflow-hidden border-2 border-amber-300 shadow-lg bg-slate-950 aspect-[16/10] flex items-center justify-center">
+              <!-- Gambar Custom Hasil Unggahan -->
+              <img id="customBannerImage" alt="Foto atau Logo Pondok Pesantren"
+                class="hidden w-full h-full object-cover" />
+
+              <!-- Logo Bawaan Pondok Pesantren Jamaluddin Bagik Nyaka -->
+              <svg id="pontrenLogoSvg" viewBox="0 0 640 400" class="w-full h-full object-contain select-none p-2" role="img" aria-label="Logo PONDOK PESANTREN JAMALUDDIN BAGIK NYAKA">
+                <defs>
+                  <linearGradient id="archCyanGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#06b6d4" />
+                    <stop offset="55%" stop-color="#0284c7" />
+                    <stop offset="100%" stop-color="#0369a1" />
+                  </linearGradient>
+                  <linearGradient id="crescentGoldGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#fef08a" />
+                    <stop offset="55%" stop-color="#eab308" />
+                    <stop offset="100%" stop-color="#b45309" />
+                  </linearGradient>
+                  <linearGradient id="kufiGreenGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#a3e635" />
+                    <stop offset="100%" stop-color="#65a30d" />
+                  </linearGradient>
+                </defs>
+
+                <rect width="640" height="400" fill="#050505" />
+
+                <g transform="translate(320, 26)">
+                  <path d="M4,-18 A16,16 0 1,0 16,12 A12.5,12.5 0 1,1 4,-18 Z" fill="url(#crescentGoldGrad)" />
+                  <polygon points="15,-8 17,-3 22,-3 18,0 19,5 15,2 11,5 12,0 8,-3 13,-3" fill="url(#crescentGoldGrad)" />
+                </g>
+
+                <polygon points="320,42 184,126 184,254 205,254 205,138 320,67 435,138 435,254 456,254 456,126" fill="url(#archCyanGrad)" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round" />
+                <polygon points="320,56 196,133 196,254 205,254 205,138 320,67 435,138 435,254 444,254 444,133" fill="#22d3ee" opacity="0.35" />
+
+                <polygon points="320,67 205,138 205,254 435,254 435,138" fill="#ffffff" />
+
+                <g transform="translate(320, 134) rotate(-45)">
+                  <path d="M-40,-40 H40 V-26 H-26 V-6 H14 V8 H-26 V26 H40 V40 H-40 Z" fill="url(#kufiGreenGrad)" />
+                  <rect x="-12" y="-22" width="12" height="12" fill="#84cc16" />
+                  <rect x="16" y="-10" width="12" height="12" fill="#84cc16" />
+                  <circle cx="28" cy="18" r="5" fill="#84cc16" />
+                  <circle cx="-12" cy="18" r="5" fill="#84cc16" />
+                </g>
+
+                <text x="320" y="218" text-anchor="middle" fill="#ea580c" font-size="22" font-weight="800" font-family="Inter, sans-serif" letter-spacing="0.5">1409H / 1989M</text>
+
+                <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M320,256 C272,228 192,226 116,246 C186,235 268,238 320,264 C372,238 454,235 524,246 C448,226 368,228 320,256 Z" fill="#2563eb" stroke="#ffffff" stroke-width="2" />
+                  <path d="M320,270 C272,243 196,242 126,262 C192,252 268,255 320,278 C372,255 448,252 514,262 C444,242 368,243 320,270 Z" fill="#ef4444" stroke="#ffffff" stroke-width="2" />
+                  <path d="M320,284 C274,258 202,258 136,278 C198,269 270,271 320,292 C370,271 442,269 504,278 C438,258 366,258 320,284 Z" fill="#2563eb" stroke="#ffffff" stroke-width="2" />
+                </g>
+
+                <text x="320" y="334" text-anchor="middle" fill="#ef4444" font-size="30" font-weight="800" font-family="Inter, sans-serif">معهد جمال الدين الإسلامي</text>
+                <text x="320" y="374" text-anchor="middle" fill="#0ea5e9" font-size="22.5" font-weight="900" font-family="Inter, sans-serif" letter-spacing="0.4">PONDOK PESANTREN JAMALUDDIN BAGIK NYAKA</text>
+              </svg>
+
+            </div>
+          </div>
+
+          <!-- Salam & Ringkasan Capaian -->
+          <div class="lg:col-span-8 flex flex-col justify-between gap-5">
+            <div class="space-y-1.5">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white text-sky-900 shadow-2xs">
+                <svg class="w-3.5 h-3.5 text-amber-600" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Asatidz Rabbani Pontren JB • Sinkronisasi Real-Time</span>
+              </span>
+              <h2 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight">Assalamu'alaikum Warahmatullahi Wabarakatuh</h2>
+              <p class="text-sm text-sky-50 font-medium max-w-2xl">
+                Silakan pilih nama ustadz/ustadzah dan tanggal, lalu tandai capaian ibadah harian Anda. Data otomatis tersimpan ke cloud dan terbaca di HP pimpinan.
+              </p>
+            </div>
+
+            <!-- Indikator Capaian Otomatis -->
+            <div class="bg-white text-sky-950 rounded-2xl p-4 shadow-xs border border-sky-200">
+              <div class="flex items-center justify-between text-xs font-bold text-sky-950 mb-1.5">
+                <span>Capaian Ibadah Hari Ini</span>
+                <span id="dailyProgressPercent" class="text-base font-extrabold gold-gradient-text">0%</span>
+              </div>
+              <div class="w-full h-2.5 bg-sky-100 rounded-full overflow-hidden">
+                <div id="dailyProgressBar" class="h-full gold-gradient rounded-full transition-all duration-300" style="width: 0%"></div>
+              </div>
+              <p id="dailyProgressSummary" class="text-xs text-slate-600 mt-2">0 dari 7 poin ibadah utama terpenuhi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daftarkan Nama Sendiri (Publik) -->
+      <details id="selfRegisterBox" class="bg-white rounded-3xl p-5 sm:p-6 shadow-card border border-sky-200 group">
+        <summary class="cursor-pointer select-none text-sm font-bold text-sky-950 flex items-center justify-between gap-2">
+          <span>Nama Anda belum ada di daftar? Daftarkan di sini</span>
+          <span class="text-xs font-semibold text-sky-700 group-open:hidden">Buka</span>
+        </summary>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-12 gap-3 items-end">
+          <div class="sm:col-span-4">
+            <label for="teacherNameInput" class="block text-xs font-bold uppercase tracking-wider text-sky-900 mb-1.5">Nama Anda (huruf latin)</label>
+            <input id="teacherNameInput" type="text" maxlength="60" placeholder="Contoh: Risman"
+              onkeydown="if(event.key==='Enter'){event.preventDefault();handleAddTeacher(event);}"
+              class="w-full rounded-2xl border border-sky-200 bg-sky-50/40 px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/15 outline-none" />
+          </div>
+          <div class="sm:col-span-4">
+            <label for="teacherNameArInput" class="block text-xs font-bold uppercase tracking-wider text-sky-900 mb-1.5">Nama bahasa Arab (opsional)</label>
+            <input id="teacherNameArInput" type="text" maxlength="60" dir="rtl" lang="ar" placeholder="مثال: رسمان"
+              onkeydown="if(event.key==='Enter'){event.preventDefault();handleAddTeacher(event);}"
+              class="w-full rounded-2xl border border-sky-200 bg-sky-50/40 px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/15 outline-none" />
+          </div>
+          <div class="sm:col-span-4">
+            <button type="button" onclick="handleAddTeacher(event)"
+              class="w-full px-4 py-2.5 min-h-[44px] rounded-2xl text-sm font-extrabold text-sky-950 gold-gradient hover:opacity-95 border border-amber-300 cursor-pointer">
+              Tambahkan Nama Saya
+            </button>
+          </div>
+        </div>
+        <p class="text-[11px] text-slate-400 mt-3">Nama Arab dipakai pada hasil rekap PDF; boleh dikosongkan. Setelah ditambahkan, nama Anda otomatis terpilih pada form ceklist di bawah.</p>
+      </details>
+
+      <!-- Form Ceklist Harian -->
+      <form id="checklistForm" onsubmit="handleSaveChecklist(event)" class="space-y-6">
+        <!-- Kartu 1: Identitas Guru & Tanggal -->
+        <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-card border border-sky-200">
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <h3 class="text-base font-bold text-sky-950 flex items-center gap-2">
+              <span class="w-7 h-7 rounded-xl gold-gradient text-sky-950 flex items-center justify-center text-xs font-extrabold shadow-2xs">1</span>
+              <span>Identitas Ustadz / Ustadzah &amp; Tanggal</span>
+            </h3>
+            <span id="existingEntryBadge" class="hidden text-xs font-semibold px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300">
+              Data tanggal ini sudah ada (mode edit)
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="teacherSelect" class="block text-xs font-bold uppercase tracking-wider text-sky-900 mb-2">
+                Nama Ustadz / Ustadzah
+              </label>
+              <select id="teacherSelect" name="teacher" required onchange="onTeacherOrDateChange()"
+                class="w-full rounded-2xl border border-sky-200 bg-sky-50/40 px-4 py-3 text-sm font-medium text-slate-800 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/15 outline-none transition-all">
+                <option value="" disabled selected>-- Pilih Nama --</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="dateInput" class="block text-xs font-bold uppercase tracking-wider text-sky-900 mb-2">
+                Tanggal Ceklist
+              </label>
+              <input id="dateInput" name="date" type="date" required onchange="onTeacherOrDateChange()"
+                class="w-full rounded-2xl border border-sky-200 bg-sky-50/40 px-4 py-3 text-sm font-medium text-slate-800 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/15 outline-none transition-all" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Kartu 2: Shalat Qobliyah & Bakdiyah (Rawatib) -->
+        <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-card border border-sky-200">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+            <div>
+              <h3 class="text-base font-bold text-sky-950 flex items-center gap-2">
+                <span class="w-7 h-7 rounded-xl gold-gradient text-sky-950 flex items-center justify-center text-xs font-extrabold shadow-2xs">2</span>
+                <span>Shalat Qobliyah &amp; Bakdiyah (Rawatib)</span>
+              </h3>
+              <p class="text-xs text-slate-500 mt-1 ml-9">Centang shalat sunnah rawatib yang dilaksanakan hari ini.</p>
+            </div>
+            <button type="button" onclick="toggleAllRawatib()"
+              class="self-start sm:self-auto text-xs font-semibold text-sky-800 hover:text-sky-950 bg-sky-100 hover:bg-sky-200/80 border border-sky-200 px-3.5 py-2 rounded-xl transition-colors cursor-pointer">
+              Pilih / Lepas Semua
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+            <label class="flex items-start gap-3 p-4 rounded-2xl border border-sky-200 hover:border-amber-400 hover:bg-sky-50/60 transition-all cursor-pointer select-none bg-white">
+              <input type="checkbox" id="qobliyahSubuh" onchange="updateProgressIndicator()"
+                class="mt-0.5 w-5 h-5 rounded-lg border-sky-300 text-sky-600 focus:ring-sky-500 cursor-pointer" />
+              <div class="flex-1">
+                <span class="block text-sm font-semibold text-slate-800">Qobliyah Subuh</span>
+                <span class="block text-xs text-slate-500 mt-0.5">Sunnah fajar sebelum Subuh (2 rakaat)</span>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3 p-4 rounded-2xl border border-sky-200 hover:border-amber-400 hover:bg-sky-50/60 transition-all cursor-pointer select-none bg-white">
+              <input type="checkbox" id="qobliyahDzuhur" onchange="updateProgressIndicator()"
+                class="mt-0.5 w-5 h-5 rounded-lg border-sky-300 text-sky-600 focus:ring-sky-500 cursor-pointer" />
+              <div class="flex-1">
+                <span class="block text-sm font-semibold text-slate-800">Qobliyah Dzuhur</span>
+                <span class="block text-xs text-slate-500 mt-0.5">Sunnah sebelum Dzuhur (2 / 4 rakaat)</span>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3 p-4 rounded-2xl border border-sky-200 hover:border-amber-400 hover:bg-sky-50/60 transition-all cursor-pointer select-none bg-white">
+              <input type="checkbox" id="bakdiyahDzuhur" onchange="updateProgressIndicator()"
+                class="mt-0.5 w-5 h-5 rounded-lg border-sky-300 text-sky-600 focus:ring-sky-500 cursor-pointer" />
+              <div class="flex-1">
+                <span class="block text-sm font-semibold text-slate-800">Bakdiyah Dzuhur</span>
+                <span class="block text-xs text-slate-500 mt-0.5">Sunnah setelah Dzuhur (2 rakaat)</span>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3 p-4 rounded-2xl border border-sky-200 hover:border-amber-400 hover:bg-sky-50/60 transition-all cursor-pointer select-none bg-white">
+              <input type="checkbox" id="bakdiyahMaghrib" onchange="updateProgressIndicator()"
+                class="mt-0.5 w-5 h-5 rounded-lg border-sky-300 text-sky-600 focus:ring-sky-500 cursor-pointer" />
+              <div class="flex-1">
+                <span class="block text-sm font-semibold text-slate-800">Bakdiyah Maghrib</span>
+                <span class="block text-xs text-slate-500 mt-0.5">Sunnah setelah Maghrib (2 rakaat)</span>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3 p-4 rounded-2xl border border-sky-200 hover:border-amber-400 hover:bg-sky-50/60 transition-all cursor-pointer select-none bg-white sm:col-span-2 lg:col-span-1">
+              <input type="checkbox" id="bakdiyahIsya" onchange="updateProgressIndicator()"
+                class="mt-0.5 w-5 h-5 rounded-lg border-sky-300 text-sky-600 focus:ring-sky-500 cursor-pointer" />
+              <div class="flex-1">
+                <span class="block text-sm font-semibold text-slate-800">Bakdiyah Isya</span>
+                <span class="block text-xs text-slate-500 mt-0.5">Sunnah setelah Isya (2 rakaat)</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Kartu 3: Baca Al-Qur'an (Sederhana: Lembar / Juz) & Shalat Malam -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Baca Al-Qur'an -->
+          <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-card border border-sky-200 flex flex-col justify-between space-y-4">
+            <div class="space-y-4">
+              <div>
+                <h3 class="text-base font-bold text-sky-950 flex items-center gap-2">
+                  <span class="w-7 h-7 rounded-xl gold-gradient text-sky-950 flex items-center justify-center text-xs font-extrabold shadow-2xs">3</span>
+                  <span>Baca Al-Qur'an</span>
+                </h3>
+                <p class="text-xs text-slate-500 mt-1 ml-9">Pilih satuan (Lembar atau Juz) dan masukkan jumlah bacaan hari ini.</p>
+              </div>
+
+              <!-- Pemilih Satuan & Jumlah -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label for="quranUnitSelect" class="block text-xs font-bold uppercase tracking-wider text-sky-900 mb-1.5">
+                    Satuan
+                  </label>
+                  <select id="quranUnitSelect" onchange="handleQuranUnitChange()"
+                    class="w-full rounded-2xl border border-sky-200 bg-sky-50/40 px-3.5 py-2.5 text-sm font-semibold text-slate-800 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/15 outline-none transition-all">
+                    <option value="Lembar">Lembar</option>
+                    <option value="Juz">Juz</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="quranAmountInput" class="block text-xs font-bold uppercase tracking-wider text-sky-900 mb-1.5">
+                    Jumlah <span id="quranUnitLabel" class="gold-gradient-text font-extrabold">(Lembar)</span>
+                  </label>
+                  <input id="quranAmountInput" type="number" min="0" max="30" step="0.5" value="0"
+                    oninput="handleQuranAmountChange()"
+                    class="w-full rounded-2xl border border-sky-200 bg-sky-50/40 px-3.5 py-2.5 text-sm font-semibold text-slate-800 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/15 outline-none transition-all" />
+                </div>
+              </div>
+
+              <!-- Preset Cepat & Tombol 0 -->
+              <div>
+                <span class="block text-[11px] font-semibold text-slate-500 mb-2">Pilihan Cepat:</span>
+                <div class="flex flex-wrap gap-2">
+                  <button type="button" onclick="setQuranPreset('Lembar', 1)"
+                    class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-sky-50 text-sky-900 hover:bg-sky-100 border border-sky-200 transition-colors cursor-pointer">
+                    1 Lembar
+                  </button>
+                  <button type="button" onclick="setQuranPreset('Lembar', 2)"
+                    class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-sky-50 text-sky-900 hover:bg-sky-100 border border-sky-200 transition-colors cursor-pointer">
+                    2 Lembar
+                  </button>
+                  <button type="button" onclick="setQuranPreset('Lembar', 5)"
+                    class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-sky-50 text-sky-900 hover:bg-sky-100 border border-sky-200 transition-colors cursor-pointer">
+                    5 Lembar
+                  </button>
+                  <button type="button" onclick="setQuranPreset('Juz', 0.5)"
+                    class="px-3 py-1.5 rounded-xl text-xs font-bold gold-gradient text-sky-950 hover:opacity-95 border border-amber-300 transition-all cursor-pointer">
+                    0.5 Juz
+                  </button>
+                  <button type="button" onclick="setQuranPreset('Juz', 1)"
+                    class="px-3 py-1.5 rounded-xl text-xs font-bold gold-gradient text-sky-950 hover:opacity-95 border border-amber-300 transition-all cursor-pointer">
+                    1 Juz
+                  </button>
+                  <button type="button" onclick="setQuranPreset(document.getElementById('quranUnitSelect').value, 0)"
+                    class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 transition-colors cursor-pointer">
+                    Tidak Membaca / 0
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div id="quranStatusBanner" class="rounded-2xl bg-sky-50 border border-sky-200 px-3.5 py-2.5 text-xs text-sky-950 font-medium">
+              Status: Belum tercatat membaca Al-Qur'an hari ini.
+            </div>
+          </div>
+
+          <!-- Shalat Malam -->
+          <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-card border border-sky-200 flex flex-col justify-between space-y-4">
+            <div class="space-y-4">
+              <div>
+                <h3 class="text-base font-bold text-sky-950 flex items-center gap-2">
+                  <span class="w-7 h-7 rounded-xl gold-gradient text-sky-950 flex items-center justify-center text-xs font-extrabold shadow-2xs">4</span>
+                  <span>Shalat Malam (Tahajud / Witir)</span>
+                </h3>
+                <p class="text-xs text-slate-500 mt-1 ml-9">Catat pelaksanaan shalat malam serta jumlah rakaatnya.</p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <button type="button" id="tahajudYesBtn" onclick="setTahajudStatus(true)"
+                  class="flex items-center justify-center gap-2 py-3 px-4 rounded-2xl border text-sm font-semibold transition-all cursor-pointer bg-white text-slate-700 border-sky-200 hover:bg-sky-50">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Melaksanakan</span>
+                </button>
+
+                <button type="button" id="tahajudNoBtn" onclick="setTahajudStatus(false)"
+                  class="flex items-center justify-center gap-2 py-3 px-4 rounded-2xl border text-sm font-semibold transition-all cursor-pointer bg-slate-100 text-slate-800 border-slate-300">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  <span>Tidak</span>
+                </button>
+              </div>
+
+              <div id="tahajudRakaatBox" class="hidden space-y-2 pt-1">
+                <label for="tahajudRakaatInput" class="block text-xs font-bold uppercase tracking-wider text-sky-900">
+                  Jumlah Rakaat Shalat Malam
+                </label>
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <input id="tahajudRakaatInput" type="number" min="1" max="40" step="1" value="3"
+                    oninput="updateProgressIndicator()"
+                    class="w-28 rounded-2xl border border-sky-200 bg-sky-50/40 px-3.5 py-2.5 text-sm font-semibold text-slate-800 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/15 outline-none" />
+                  <button type="button" onclick="setTahajudRakaat(3)"
+                    class="px-3 py-2 rounded-xl text-xs font-semibold bg-sky-50 text-sky-900 hover:bg-sky-100 border border-sky-200 cursor-pointer">
+                    3 Rakaat
+                  </button>
+                  <button type="button" onclick="setTahajudRakaat(11)"
+                    class="px-3 py-2 rounded-xl text-xs font-bold gold-gradient text-sky-950 hover:opacity-95 border border-amber-300 cursor-pointer">
+                    11 Rakaat
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div id="tahajudStatusBanner" class="rounded-2xl bg-slate-100 border border-slate-200 px-3.5 py-2.5 text-xs text-slate-600 font-medium">
+              Status: Belum melaksanakan shalat malam.
+            </div>
+          </div>
+        </div>
+
+        <!-- Catatan Tambahan & Tombol Simpan -->
+        <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-card border border-sky-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div class="flex-1 w-full">
+            <label for="notesInput" class="block text-xs font-bold uppercase tracking-wider text-sky-900 mb-1.5">
+              Catatan Tambahan (Opsional)
+            </label>
+            <input id="notesInput" type="text" maxlength="200" placeholder="Contoh: Shalat malam jam 03.30 WIB, tilawah ba'da Subuh..."
+              class="w-full rounded-2xl border border-sky-200 bg-sky-50/40 px-4 py-2.5 text-sm text-slate-800 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/15 outline-none transition-all" />
+          </div>
+
+          <div class="flex items-center gap-3 w-full sm:w-auto [&>button]:min-h-[48px]">
+            <button type="button" onclick="confirmResetForm()"
+              class="flex-1 sm:flex-initial px-4 py-3 rounded-2xl text-sm font-semibold text-sky-900 bg-sky-50 hover:bg-sky-100 border border-sky-200 transition-colors cursor-pointer">
+              Reset Form
+            </button>
+            <button id="saveChecklistBtn" type="submit"
+              class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl text-sm font-extrabold text-sky-950 gold-gradient hover:opacity-95 border border-amber-300 shadow-soft transition-all cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Simpan Ceklist Harian</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- TAB 2: REKAP PIMPINAN (TERKUNCI PASSWORD ADMIN: 12234)              -->
+    <!-- ===================================================================== -->
+    <section id="recapSection" class="hidden space-y-6 animate-fade-in">
+      <!-- Gate Password Admin -->
+      <div id="adminLockCard" class="max-w-md mx-auto bg-white rounded-3xl p-6 sm:p-8 shadow-soft border border-sky-200 text-center space-y-5 my-4">
+        <div class="w-14 h-14 rounded-2xl gold-gradient text-sky-950 flex items-center justify-center mx-auto shadow-soft ring-2 ring-amber-300">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </div>
+
+        <div class="space-y-1">
+          <h2 class="text-xl font-extrabold text-sky-950">Rekapitulasi Khusus Pimpinan</h2>
+          <p class="text-xs sm:text-sm text-slate-500">
+            Halaman ini dilindungi. Masukkan password admin untuk melihat dan mengelola rekap ceklist harian asatidz.
+          </p>
+        </div>
+
+        <form id="adminLoginForm" onsubmit="handleAdminLogin(event)" class="space-y-3.5 text-left">
+          <div>
+            <label for="adminPasswordInput" class="block text-xs font-bold uppercase tracking-wider text-sky-900 mb-1.5">
+              Password Admin
+            </label>
+            <div class="relative">
+              <input id="adminPasswordInput" type="password" required autocomplete="current-password"
+                placeholder="Masukkan password admin"
+                class="w-full rounded-2xl border border-sky-200 bg-sky-50/40 px-4 py-3 pr-11 text-sm font-medium text-slate-800 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/15 outline-none transition-all" />
+              <button type="button" onclick="togglePasswordVisibility()" aria-label="Tampilkan atau sembunyikan password"
+                class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-sky-700 p-1 cursor-pointer">
+                <svg id="eyeIcon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </button>
+            </div>
+            <p id="adminLoginError" class="hidden text-xs font-medium text-rose-600 mt-1.5">
+              Password admin salah. Silakan coba kembali.
+            </p>
+          </div>
+
+          <button type="submit"
+            class="w-full py-3 px-4 rounded-2xl text-sm font-extrabold text-sky-950 gold-gradient hover:opacity-95 border border-amber-300 shadow-soft transition-all cursor-pointer">
+            Buka Rekap Pimpinan
+          </button>
+        </form>
+      </div>
+
+      <!-- Dashboard Rekap Pimpinan (Tampil Setelah Login Admin) -->
+      <div id="adminDashboard" class="hidden space-y-6">
+        <!-- Toolbar Atas Rekap -->
+        <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-card border border-sky-200 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold gold-gradient text-sky-950 border border-amber-300">
+                Mode Pimpinan Aktif
+              </span>
+              <span id="workspaceBadgeText" class="text-xs font-medium text-slate-500">Ruang: pontren_jb_utama</span>
+            </div>
+            <h2 class="text-xl font-extrabold text-sky-950 mt-1">Rekapitulasi Mutaba'ah Ustadz / Ustadzah</h2>
+            <p class="text-xs sm:text-sm text-slate-500">Pantau kedisiplinan Shalat Rawatib, Baca Al-Qur'an, dan Shalat Malam secara real-time.</p>
+          </div>
+
+          <div class="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2.5 [&>button]:justify-center">
+            <button type="button" onclick="openCloudConfigModal()"
+              class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-sky-900 bg-sky-100 hover:bg-sky-200 border border-sky-200 transition-colors cursor-pointer">
+              <svg class="w-4 h-4 text-sky-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+              </svg>
+              <span>Ruang Data</span>
+            </button>
+
+            <button type="button" onclick="seedSampleData()"
+              class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-sky-900 bg-sky-50 hover:bg-sky-100 border border-sky-200 transition-colors cursor-pointer">
+              <svg class="w-4 h-4 text-sky-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
+              <span>Data Contoh</span>
+            </button>
+
+            <button id="exportPdfBtn" type="button" onclick="exportRecapToPdf()"
+              class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-extrabold text-white bg-sky-700 hover:bg-sky-800 border border-sky-800 transition-colors cursor-pointer disabled:opacity-60">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v13a2 2 0 002 2zM14 4v5h5" />
+              </svg>
+              <span>Export PDF (Arab)</span>
+            </button>
+
+            <button type="button" onclick="exportRecapToCsv()"
+              class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-extrabold text-sky-950 gold-gradient hover:opacity-95 border border-amber-300 transition-all cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              <span>Export CSV</span>
+            </button>
+
+            <button type="button" onclick="confirmClearAllEntries()"
+              class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-rose-700 bg-rose-50 hover:bg-rose-100 border border-rose-200 transition-colors cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+              </svg>
+              <span>Hapus Semua</span>
+            </button>
+
+            <button type="button" onclick="lockAdminSession()"
+              class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-colors cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              </svg>
+              <span>Kunci</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Kelola Daftar Ustadz / Ustadzah -->
+        <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-card border border-sky-200 space-y-4">
+          <div class="flex items-start justify-between gap-2 flex-wrap">
+            <div>
+              <h3 class="text-base font-bold text-sky-950">Daftar Ustadz / Ustadzah</h3>
+              <p class="text-xs text-slate-500">Nama didaftarkan sendiri oleh masing-masing ustadz/ustadzah dari halaman Ceklist Harian. Pimpinan dapat menghapus nama yang keliru di sini.</p>
+            </div>
+            <span id="teacherCountBadge" class="text-xs font-semibold px-3 py-1 rounded-full bg-sky-100 text-sky-900 border border-sky-200">0 nama</span>
+          </div>
+
+          <div id="teacherListContainer" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Filter Rekap -->
+        <div class="bg-white rounded-3xl p-5 shadow-card border border-sky-200">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div>
+              <label for="filterPeriodType" class="block text-xs font-bold uppercase tracking-wider text-sky-900 mb-1.5">
+                Jenis Periode
+              </label>
+              <select id="filterPeriodType" onchange="onFilterPeriodTypeChange()"
+                class="w-full rounded-2xl border border-sky-200 bg-sky-50/40 px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/15 outline-none">
+                <option value="all">Semua Tanggal</option>
+                <option value="day" selected>Per Tanggal</option>
+                <option value="month">Per Bulan</option>
+              </select>
+            </div>
+
+            <div id="filterDateWrapper">
+              <label for="filterDateInput" class="block text-xs font-bold uppercase tracking-wider text-sky-900 mb-1.5">
+                Pilih Tanggal
+              </label>
+              <input id="filterDateInput" type="date" onchange="renderRecapDashboard()"
+                class="w-full rounded-2xl border border-sky-200 bg-sky-50/40 px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/15 outline-none" />
+            </div>
+
+            <div id="filterMonthWrapper" class="hidden">
+              <label for="filterMonthInput" class="block text-xs font-bold uppercase tracking-wider text-sky-900 mb-1.5">
+                Pilih Bulan
+              </label>
+              <input id="filterMonthInput" type="month" onchange="renderRecapDashboard()"
+                class="w-full rounded-2xl border border-sky-200 bg-sky-50/40 px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/15 outline-none" />
+            </div>
+
+            <div>
+              <label for="filterTeacherSelect" class="block text-xs font-bold uppercase tracking-wider text-sky-900 mb-1.5">
+                Filter Ustadz / Ustadzah
+              </label>
+              <select id="filterTeacherSelect" onchange="renderRecapDashboard()"
+                class="w-full rounded-2xl border border-sky-200 bg-sky-50/40 px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/15 outline-none">
+                <option value="ALL">Semua Ustadz / Ustadzah</option>
+              </select>
+            </div>
+
+            <div class="flex items-end">
+              <button type="button" onclick="resetRecapFilters()"
+                class="w-full py-2.5 px-4 rounded-2xl text-xs font-bold text-sky-950 bg-sky-100 hover:bg-sky-200 border border-sky-200 transition-colors cursor-pointer">
+                Tampilkan Semua Data
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ringkasan KPI (4 Kartu) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-white rounded-3xl p-5 shadow-card border border-sky-200">
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-800">Total Entri Tercatat</span>
+            <p id="kpiTotalEntries" class="text-2xl sm:text-3xl font-extrabold text-sky-950 mt-1.5">0</p>
+            <p id="kpiTotalEntriesSub" class="text-xs text-slate-500 mt-1">0 dari 7 asatidz pada periode ini</p>
+          </div>
+
+          <div class="bg-white rounded-3xl p-5 shadow-card border border-sky-200">
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-800">Rata-Rata Rawatib</span>
+            <p id="kpiAvgRawatib" class="text-2xl sm:text-3xl font-extrabold text-sky-600 mt-1.5">0%</p>
+            <p class="text-xs text-slate-500 mt-1">Qobliyah &amp; Bakdiyah (5 waktu)</p>
+          </div>
+
+          <div class="bg-white rounded-3xl p-5 shadow-card border border-amber-300">
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-800">Membaca Al-Qur'an</span>
+            <p id="kpiQuranRate" class="text-2xl sm:text-3xl font-extrabold gold-gradient-text mt-1.5">0%</p>
+            <p id="kpiQuranSub" class="text-xs text-slate-500 mt-1">Total 0 Lembar • 0 Juz</p>
+          </div>
+
+          <div class="bg-white rounded-3xl p-5 shadow-card border border-sky-200">
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-800">Shalat Malam</span>
+            <p id="kpiTahajudRate" class="text-2xl sm:text-3xl font-extrabold text-sky-700 mt-1.5">0%</p>
+            <p class="text-xs text-slate-500 mt-1">Persentase entri melaksanakan</p>
+          </div>
+        </div>
+
+        <!-- Tabel Rekap Per Ustadz / Ustadzah -->
+        <div class="bg-white rounded-3xl shadow-card border border-sky-200 overflow-hidden">
+          <div class="px-5 sm:px-6 py-4 border-b border-sky-100 flex items-center justify-between bg-sky-50/70">
+            <div>
+              <h3 class="text-base font-bold text-sky-950">Rekap Per Ustadz / Ustadzah</h3>
+              <p class="text-xs text-slate-500">Akumulasi capaian berdasarkan filter yang dipilih.</p>
+            </div>
+          </div>
+
+          <div class="hidden md:block overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-sky-50 border-b border-sky-200 text-[11px] font-bold uppercase tracking-wider text-sky-950">
+                  <th class="py-3.5 px-4 sm:px-6">Nama</th>
+                  <th class="py-3.5 px-4 text-center">Hari Terisi</th>
+                  <th class="py-3.5 px-4 text-center">Rawatib</th>
+                  <th class="py-3.5 px-4 text-center">Baca Al-Qur'an</th>
+                  <th class="py-3.5 px-4 text-center">Total Bacaan</th>
+                  <th class="py-3.5 px-4 text-center">Shalat Malam</th>
+                  <th class="py-3.5 px-4 sm:px-6 text-right">Rata-Rata</th>
+                </tr>
+              </thead>
+              <tbody id="teacherSummaryBody" class="divide-y divide-sky-100 text-sm">
+                <!-- Diisi via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+          <div id="teacherSummaryCards" class="md:hidden divide-y divide-sky-100"></div>
+        </div>
+
+        <!-- Tabel Detail Log Harian -->
+        <div class="bg-white rounded-3xl shadow-card border border-sky-200 overflow-hidden">
+          <div class="px-5 sm:px-6 py-4 border-b border-sky-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 bg-sky-50/70">
+            <div>
+              <h3 class="text-base font-bold text-sky-950">Detail Log Ceklist Harian</h3>
+              <p class="text-xs text-slate-500">Rincian harian setiap ustadz/ustadzah beserta aksi hapus entri.</p>
+            </div>
+            <span id="detailLogCountBadge" class="text-xs font-semibold px-3 py-1 rounded-full bg-sky-100 text-sky-900 border border-sky-200 self-start sm:self-auto">
+              0 catatan
+            </span>
+          </div>
+
+          <div class="hidden md:block overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-sky-50 border-b border-sky-200 text-[11px] font-bold uppercase tracking-wider text-sky-950">
+                  <th class="py-3.5 px-4 sm:px-6">Tanggal</th>
+                  <th class="py-3.5 px-4">Nama</th>
+                  <th class="py-3.5 px-4">Qobliyah &amp; Bakdiyah</th>
+                  <th class="py-3.5 px-4">Baca Al-Qur'an</th>
+                  <th class="py-3.5 px-4">Shalat Malam</th>
+                  <th class="py-3.5 px-4">Catatan</th>
+                  <th class="py-3.5 px-4 sm:px-6 text-right">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="detailLogBody" class="divide-y divide-sky-100 text-sm">
+                <!-- Diisi via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+          <div id="detailLogCards" class="md:hidden divide-y divide-sky-100"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-sky-200 py-5 mt-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500">
+      <p>Asatidz Rabbani Pontren JB • Mutaba'ah Harian &amp; Rekap Pimpinan</p>
+      <p>Sinkronisasi Real-Time Cloud</p>
+    </div>
+  </footer>
+
+  <!-- Modal Pengaturan Ruang Data -->
+  <div id="cloudConfigModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/50 backdrop-blur-xs p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full max-h-[90vh] overflow-y-auto p-5 sm:p-6 shadow-xl border border-sky-200 space-y-4 animate-fade-in">
+      <div class="flex items-center justify-between">
+        <h3 class="text-base font-extrabold text-sky-950">Pengaturan Ruang Data</h3>
+        <button type="button" onclick="closeCloudConfigModal()" aria-label="Tutup modal"
+          class="p-1.5 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <p class="text-xs text-slate-600 leading-relaxed">
+        Gunakan <strong>Kode Ruang</strong> yang sama di semua HP asatidz dan pimpinan agar data mutaba'ah saling tersinkronisasi secara real-time.
+      </p>
+
+      <form id="cloudConfigForm" onsubmit="handleSaveCloudConfig(event)" class="space-y-3.5">
+        <div>
+          <label for="cfgWorkspaceId" class="block text-xs font-bold uppercase tracking-wider text-sky-900 mb-1">
+            Kode Ruang / Lembaga
+          </label>
+          <input id="cfgWorkspaceId" type="text" required pattern="[a-zA-Z0-9_-]{3,40}"
+            placeholder="pontren_jb_utama"
+            class="w-full rounded-2xl border border-sky-200 px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:border-sky-500 focus:ring-4 focus:ring-sky-500/15 outline-none" />
+          <p class="text-[11px] text-slate-400 mt-1">Hanya huruf, angka, garis bawah (_), atau tanda hubung (-).</p>
+        </div>
+
+        <div class="flex items-center justify-between gap-2 pt-2">
+          <button type="button" onclick="resetWorkspaceToDefault()"
+            class="px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 cursor-pointer">
+            Default
+          </button>
+          <div class="flex items-center gap-2">
+            <button type="button" onclick="closeCloudConfigModal()"
+              class="px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-100 cursor-pointer">
+              Batal
+            </button>
+            <button type="submit"
+              class="px-4 py-2.5 rounded-xl text-xs font-extrabold text-sky-950 gold-gradient hover:opacity-95 cursor-pointer">
+              Terapkan Ruang
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modul Aplikasi & Sinkronisasi Real-Time -->
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+    // =========================================================================
+    // KONFIGURASI SUPABASE  (isi dengan data dari Project Settings > API)
+    // =========================================================================
+    // URL gambar banner (logo/foto pondok). Kosongkan '' untuk memakai logo bawaan.
+    const BANNER_IMAGE_URL = '';
+
+    const SUPABASE_URL = 'https://qdxxwwqsvjxysoxmipkm.supabase.co'; // URL dasar project (tanpa /rest/v1/)
+    const SUPABASE_ANON_KEY = 'sb_publishable_oBgZ1zci3qUvykpWBvKVxA_HeMt2wT7'; // isi dengan Publishable key (sb_publishable_...) atau anon public key. JANGAN service_role/secret!
+
+    // =========================================================================
+    // KONSTANTA & DATA REFERENSI
+    // =========================================================================
+    const RAWATIB_ITEMS = [
+      { key: 'qobliyahSubuh', label: 'Qobliyah Subuh', short: 'Q. Subuh' },
+      { key: 'qobliyahDzuhur', label: 'Qobliyah Dzuhur', short: 'Q. Dzuhur' },
+      { key: 'bakdiyahDzuhur', label: 'Bakdiyah Dzuhur', short: 'B. Dzuhur' },
+      { key: 'bakdiyahMaghrib', label: 'Bakdiyah Maghrib', short: 'B. Maghrib' },
+      { key: 'bakdiyahIsya', label: 'Bakdiyah Isya', short: 'B. Isya' },
+    ];
+    const ADMIN_PASSWORD = String(12234);
+    const WORKSPACE_STORAGE_KEY = 'asatidz_rabbani_pontren_jb_workspace_v1';
+    const LOCAL_CACHE_PREFIX = 'asatidz_rabbani_pontren_jb_entries_v1_';
+
+    // =========================================================================
+    // STATE APLIKASI
+    // =========================================================================
+    const state = {
+      activeTab: 'checklist',
+      isAdminAuthenticated: false,
+      workspaceId: loadSavedWorkspaceId(),
+      entries: [],
+      teachers: [],
+      tahajudDone: false,
+      connectionStatus: 'connecting', // 'connecting' | 'online' | 'local'
+      pendingConfirmCallback: null,
+    };
+
+    let supabase = null;
+    let realtimeChannel = null;
+    let memoryFallbackEntries = [];
+
+    // =========================================================================
+    // GAMBAR BANNER (URL DITULIS LANGSUNG DI KODE: lihat BANNER_IMAGE_URL di atas)
+    // =========================================================================
+    function applyBannerImage() {
+      const imgEl = document.getElementById('customBannerImage');
+      const svgEl = document.getElementById('pontrenLogoSvg');
+      const url = String(BANNER_IMAGE_URL || '').trim();
+      if (!imgEl || !svgEl) return;
+
+      const showDefaultLogo = () => {
+        imgEl.removeAttribute('src');
+        imgEl.classList.add('hidden');
+        svgEl.classList.remove('hidden');
+      };
+
+      if (!url) {
+        showDefaultLogo();
+        return;
+      }
+
+      imgEl.onload = () => {
+        imgEl.classList.remove('hidden');
+        svgEl.classList.add('hidden');
+      };
+      imgEl.onerror = showDefaultLogo; // jika URL gagal dimuat, kembali ke logo bawaan
+      imgEl.src = url;
+    }
+
+    function loadSavedWorkspaceId() {
+      try {
+        const saved = localStorage.getItem(WORKSPACE_STORAGE_KEY);
+        if (saved && /^[a-zA-Z0-9_-]{3,40}$/.test(saved.trim())) {
+          return saved.trim();
+        }
+      } catch (_err) {
+        // Abaikan jika storage dibatasi
+      }
+      return 'pontren_jb_utama';
+    }
+
+    function saveWorkspaceIdToStorage(wsId) {
+      try {
+        localStorage.setItem(WORKSPACE_STORAGE_KEY, wsId);
+      } catch (_err) {
+        // Abaikan jika storage dibatasi
+      }
+    }
+
+    function getLocalCacheKey(wsId = state.workspaceId) {
+      return `${LOCAL_CACHE_PREFIX}${wsId}`;
+    }
+
+    function loadCachedEntries(wsId = state.workspaceId) {
+      try {
+        const raw = localStorage.getItem(getLocalCacheKey(wsId));
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed)) {
+            return parsed.map(normalizeEntry).filter(Boolean);
+          }
+        }
+      } catch (_err) {
+        // Abaikan error storage
+      }
+      return memoryFallbackEntries.map(normalizeEntry).filter(Boolean);
+    }
+
+    function saveCachedEntries(entriesList, wsId = state.workspaceId) {
+      memoryFallbackEntries = entriesList.map(normalizeEntry).filter(Boolean);
+      try {
+        localStorage.setItem(getLocalCacheKey(wsId), JSON.stringify(memoryFallbackEntries));
+      } catch (_err) {
+        // Abaikan error kuota/storage
+      }
+    }
+
+    // =========================================================================
+    // UTILITAS TANGGAL, ANGKA & NORMALISASI DATA
+    // =========================================================================
+    function getTodayDateString() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    }
+
+    function getCurrentMonthString() {
+      return getTodayDateString().slice(0, 7);
+    }
+
+    function formatIndonesianDate(dateStr) {
+      if (!dateStr || !/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) return dateStr || '-';
+      const [y, m, d] = dateStr.split('-').map(Number);
+      const dt = new Date(y, m - 1, d);
+      return dt.toLocaleDateString('id-ID', {
+        weekday: 'short',
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+      });
+    }
+
+    function roundHalf(val) {
+      const num = Number(val);
+      if (!Number.isFinite(num) || num <= 0) return 0;
+      return Math.round(num * 100) / 100;
+    }
+
+    function formatNumberId(num) {
+      const rounded = roundHalf(num);
+      return Number.isInteger(rounded) ? String(rounded) : rounded.toLocaleString('id-ID', { maximumFractionDigits: 2 });
+    }
+
+    function buildEntryId(teacher, date) {
+      const safeTeacher = String(teacher || '').trim().toLowerCase().replace(/[^a-z0-9]+/g, '_');
+      return `${date}__${safeTeacher}`;
+    }
+
+    function normalizeEntry(raw) {
+      if (!raw || typeof raw !== 'object') return null;
+      const teacher = String(raw.teacher || '').trim();
+      const date = String(raw.date || '').trim();
+      if (!teacher || !date) return null;
+
+      let quranUnit = raw.quranUnit === 'Juz' ? 'Juz' : 'Lembar';
+      let quranAmount = 0;
+
+      if (typeof raw.quranAmount === 'number' || typeof raw.quranAmount === 'string') {
+        quranAmount = roundHalf(raw.quranAmount);
+      } else if (raw.quranRead) {
+        if (typeof raw.quranJuz === 'number' && raw.quranJuz > 0) {
+          quranUnit = 'Juz';
+          quranAmount = roundHalf(raw.quranJuz);
+        } else {
+          quranUnit = 'Lembar';
+          quranAmount = roundHalf(raw.quranPages) || 1;
+        }
+      }
+
+      const quranRead = quranAmount > 0;
+      const tahajudDone = Boolean(raw.tahajudDone);
+      const tahajudRakaat = tahajudDone ? Math.max(1, Math.round(Number(raw.tahajudRakaat) || 3)) : 0;
+
+      return {
+        id: raw.id || buildEntryId(teacher, date),
+        teacher,
+        date,
+        qobliyahSubuh: Boolean(raw.qobliyahSubuh),
+        qobliyahDzuhur: Boolean(raw.qobliyahDzuhur),
+        bakdiyahDzuhur: Boolean(raw.bakdiyahDzuhur),
+        bakdiyahMaghrib: Boolean(raw.bakdiyahMaghrib),
+        bakdiyahIsya: Boolean(raw.bakdiyahIsya),
+        quranRead,
+        quranUnit,
+        quranAmount,
+        tahajudDone,
+        tahajudRakaat,
+        notes: String(raw.notes || '').trim(),
+        updatedAt: raw.updatedAt || new Date().toISOString(),
+      };
+    }
+
+    function calculateEntryStats(entry) {
+      const rawatibCount = RAWATIB_ITEMS.reduce((acc, item) => acc + (entry[item.key] ? 1 : 0), 0);
+      const quranScore = entry.quranRead ? 1 : 0;
+      const tahajudScore = entry.tahajudDone ? 1 : 0;
+      const totalPoints = rawatibCount + quranScore + tahajudScore;
+      const maxPoints = RAWATIB_ITEMS.length + 2; // 7 poin
+      const percentage = Math.round((totalPoints / maxPoints) * 100);
+
+      let totalLembar = 0;
+      let totalJuz = 0;
+      if (entry.quranAmount > 0) {
+        if (entry.quranUnit === 'Juz') {
+          totalJuz = roundHalf(entry.quranAmount);
+          totalLembar = roundHalf(entry.quranAmount * 20);
+        } else {
+          totalLembar = roundHalf(entry.quranAmount);
+          totalJuz = roundHalf(entry.quranAmount / 20);
+        }
+      }
+
+      return {
+        rawatibCount,
+        rawatibPercent: Math.round((rawatibCount / RAWATIB_ITEMS.length) * 100),
+        totalPoints,
+        maxPoints,
+        percentage,
+        totalLembar,
+        totalJuz,
+      };
+    }
+
+    // =========================================================================
+    // TOAST & MODAL KONFIRMASI
+    // =========================================================================
+    // =========================================================================
+    // SISTEM POP-UP (menggantikan toast): sukses, info, error, konfirmasi, loading
+    // =========================================================================
+    let activePopup = null;
+    let popupTimer = null;
+
+    const POPUP_THEMES = {
+      success: { grad: 'linear-gradient(135deg,#34d399,#059669)', ring: '#10b981', title: 'Berhasil' },
+      info:    { grad: 'linear-gradient(135deg,#38bdf8,#0369a1)', ring: '#0ea5e9', title: 'Informasi' },
+      error:   { grad: 'linear-gradient(135deg,#fb7185,#be123c)', ring: '#f43f5e', title: 'Terjadi Kesalahan' },
+      confirm: { grad: 'linear-gradient(135deg,#fde047,#d97706)', ring: '#eab308', title: 'Konfirmasi' },
+      danger:  { grad: 'linear-gradient(135deg,#fb7185,#be123c)', ring: '#f43f5e', title: 'Konfirmasi Hapus' },
+      loading: { grad: 'linear-gradient(135deg,#38bdf8,#0369a1)', ring: '#0ea5e9', title: 'Mohon Tunggu' },
+    };
+
+    const POPUP_ICONS = {
+      success: '<svg viewBox="0 0 24 24" class="w-9 h-9" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path class="pop-draw" d="M5 13l4 4L19 7"/></svg>',
+      info: '<svg viewBox="0 0 24 24" class="w-9 h-9" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round"><path d="M12 11v6"/><circle cx="12" cy="7.2" r=".6" fill="#fff"/></svg>',
+      error: '<svg viewBox="0 0 24 24" class="w-9 h-9" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round"><path d="M12 6v8"/><circle cx="12" cy="18" r=".6" fill="#fff"/></svg>',
+      confirm: '<svg viewBox="0 0 24 24" class="w-9 h-9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 9a2.6 2.6 0 115 .6c0 1.7-2.5 2-2.5 3.8"/><circle cx="12" cy="17.6" r=".6" fill="#fff"/></svg>',
+      danger: '<svg viewBox="0 0 24 24" class="w-9 h-9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6m4-6v6M6 7l.8 11a2 2 0 002 1.9h6.4a2 2 0 002-1.9L18 7M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>',
+      loading: '<svg viewBox="0 0 24 24" class="w-9 h-9 pop-spin" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M12 3a9 9 0 019 9" /><circle cx="12" cy="12" r="9" stroke-opacity=".3"/></svg>',
+    };
+
+    function closePopup() {
+      if (popupTimer) {
+        clearTimeout(popupTimer);
+        popupTimer = null;
+      }
+      if (!activePopup) return;
+      const { el, onKey } = activePopup;
+      document.removeEventListener('keydown', onKey);
+      activePopup = null;
+      el.classList.add('pop-out');
+      setTimeout(() => el.remove(), 170);
+    }
+
+    function showPopup(opts = {}) {
+      const {
+        type = 'info',
+        title = '',
+        message = '',
+        rows = null,
+        confirmText = 'OK',
+        cancelText = null,
+        autoClose = 0,
+        onConfirm = null,
+        onCancel = null,
+      } = opts;
+
+      closePopup();
+      const theme = POPUP_THEMES[type] || POPUP_THEMES.info;
+      const isLoading = type === 'loading';
+      const isDanger = type === 'danger';
+      const heading = title || theme.title;
+
+      const rowsHtml = Array.isArray(rows) && rows.length
+        ? `<dl class="mt-4 text-left rounded-2xl bg-sky-50/70 border border-sky-100 px-4 py-1.5">${rows.map(([k, v]) => `
+            <div class="flex items-start justify-between gap-4 py-2 border-b border-sky-100 last:border-0 text-sm">
+              <dt class="text-slate-500 shrink-0">${escapeHtml(k)}</dt>
+              <dd class="font-semibold text-sky-950 text-right break-words min-w-0">${escapeHtml(v)}</dd>
+            </div>`).join('')}</dl>`
+        : '';
+
+      const confirmCls = isDanger
+        ? 'text-white bg-rose-600 hover:bg-rose-700 border border-rose-700'
+        : 'text-sky-950 gold-gradient hover:opacity-95 border border-amber-300';
+
+      const buttonsHtml = isLoading ? '' : `
+        <div class="mt-6 flex flex-col-reverse sm:flex-row gap-2.5 ${cancelText ? '' : 'justify-center'}">
+          ${cancelText ? `<button type="button" data-pop="cancel" class="flex-1 min-h-[46px] px-5 py-2.5 rounded-2xl text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-colors cursor-pointer">${escapeHtml(cancelText)}</button>` : ''}
+          <button type="button" data-pop="ok" class="${cancelText ? 'flex-1' : 'w-full sm:w-auto sm:min-w-[160px]'} min-h-[46px] px-6 py-2.5 rounded-2xl text-sm font-extrabold shadow-soft transition-all cursor-pointer ${confirmCls}">${escapeHtml(confirmText)}</button>
+        </div>`;
+
+      const barHtml = autoClose > 0
+        ? `<div class="absolute left-0 right-0 bottom-0 h-1.5 bg-slate-100"><div style="height:100%;background:${theme.grad};animation:popBar ${autoClose}ms linear forwards"></div></div>`
+        : '';
+
+      const el = document.createElement('div');
+      el.className = 'pop-overlay fixed inset-0 z-[70] flex items-center justify-center p-4 bg-slate-900/55 backdrop-blur-sm';
+      el.setAttribute('role', 'dialog');
+      el.setAttribute('aria-modal', 'true');
+      el.innerHTML = `
+        <div class="pop-card relative w-full max-w-sm bg-white rounded-3xl shadow-2xl border border-sky-100 overflow-hidden px-6 pt-9 pb-6 text-center max-h-[90vh] overflow-y-auto">
+          <div class="relative mx-auto w-[72px] h-[72px] mb-4">
+            ${isLoading ? '' : `<span class="pop-ring absolute inset-0 rounded-full" style="background:${theme.ring};opacity:.35"></span>`}
+            <div class="relative w-[72px] h-[72px] rounded-full flex items-center justify-center shadow-lg ring-4 ring-white" style="background:${theme.grad}">
+              ${POPUP_ICONS[type] || POPUP_ICONS.info}
+            </div>
+          </div>
+          <h3 class="text-lg font-extrabold text-sky-950 leading-snug">${escapeHtml(heading)}</h3>
+          ${message ? `<p class="mt-1.5 text-sm text-slate-600 leading-relaxed">${escapeHtml(message).replace(/\n/g, '<br>')}</p>` : ''}
+          ${rowsHtml}
+          ${buttonsHtml}
+          ${autoClose > 0 ? '<div class="h-2"></div>' : ''}
+          ${barHtml}
+        </div>`;
+
+      const finish = (confirmed) => {
+        closePopup();
+        if (confirmed) {
+          if (typeof onConfirm === 'function') onConfirm();
+        } else if (typeof onCancel === 'function') {
+          onCancel();
+        }
+      };
+
+      const onKey = (e) => {
+        if (isLoading) return;
+        if (e.key === 'Escape') finish(false);
+      };
+      document.addEventListener('keydown', onKey);
+
+      el.addEventListener('click', (e) => {
+        if (isLoading) return;
+        const action = e.target?.closest?.('[data-pop]')?.getAttribute('data-pop');
+        if (action === 'ok') finish(true);
+        else if (action === 'cancel') finish(false);
+        else if (e.target === el && !cancelText) finish(true);
+        else if (e.target === el) finish(false);
+      });
+
+      document.body.appendChild(el);
+      activePopup = { el, onKey };
+
+      const okBtn = el.querySelector('[data-pop="ok"]');
+      if (okBtn) okBtn.focus({ preventScroll: true });
+
+      if (autoClose > 0) {
+        popupTimer = setTimeout(() => finish(true), autoClose);
+      }
+    }
+
+    function showLoadingPopup(message = 'Sedang memproses...', title = 'Mohon Tunggu') {
+      showPopup({ type: 'loading', title, message });
+    }
+
+    // Kompatibilitas: semua pemanggil showToast kini menampilkan pop-up
+    function showToast(message, type = 'info', title = '') {
+      const kind = ['success', 'info', 'error'].includes(type) ? type : 'info';
+      showPopup({
+        type: kind,
+        title,
+        message,
+        confirmText: 'OK',
+        autoClose: kind === 'error' ? 0 : kind === 'success' ? 2600 : 3000,
+      });
+    }
+
+    function escapeHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function openConfirmModal(title, message, onConfirm) {
+      showPopup({
+        type: 'danger',
+        title,
+        message,
+        confirmText: 'Ya, Lanjutkan',
+        cancelText: 'Batal',
+        onConfirm,
+      });
+    }
+
+    function closeConfirmModal() {
+      closePopup();
+    }
+
+    function setupModals() {
+      const cancelBtn = document.getElementById('cancelConfirmBtn');
+      const okBtn = document.getElementById('okConfirmBtn');
+      const confirmModal = document.getElementById('confirmModal');
+      const cloudModal = document.getElementById('cloudConfigModal');
+
+      if (cancelBtn) {
+        cancelBtn.addEventListener('click', closeConfirmModal);
+      }
+      if (okBtn) {
+        okBtn.addEventListener('click', async () => {
+          const cb = state.pendingConfirmCallback;
+          closeConfirmModal();
+          if (typeof cb === 'function') {
+            await cb();
+          }
+        });
+      }
+      if (confirmModal) {
+        confirmModal.addEventListener('click', (e) => {
+          if (e.target === confirmModal) closeConfirmModal();
+        });
+      }
+      if (cloudModal) {
+        cloudModal.addEventListener('click', (e) => {
+          if (e.target === cloudModal) window.closeCloudConfigModal();
+        });
+      }
+    }
+
+    // =========================================================================
+    // STATUS KONEKSI & SINKRONISASI CLOUD
+    // =========================================================================
+    function updateOnlineStatusUI() {
+      const dot = document.getElementById('onlineStatusDot');
+      const text = document.getElementById('onlineStatusText');
+      const wsBadge = document.getElementById('workspaceBadgeText');
+
+      if (wsBadge) {
+        wsBadge.textContent = `Ruang: ${state.workspaceId}`;
+      }
+      if (!dot || !text) return;
+
+      if (state.connectionStatus === 'online') {
+        dot.className = 'w-2 h-2 rounded-full bg-emerald-500 animate-pulse';
+        text.textContent = `Online • ${state.workspaceId}`;
+      } else if (state.connectionStatus === 'local') {
+        dot.className = 'w-2 h-2 rounded-full bg-amber-500';
+        text.textContent = `Sesi Perangkat • ${state.workspaceId}`;
+      } else {
+        dot.className = 'w-2 h-2 rounded-full bg-sky-500 animate-ping';
+        text.textContent = 'Menghubungkan Cloud...';
+      }
+    }
+
+    // Pemetaan antara objek entri aplikasi <-> baris tabel Supabase
+    const TABLE_NAME = 'mutabaah_entries';
+
+    function entryToRow(e) {
+      return {
+        workspace_id: state.workspaceId,
+        id: e.id,
+        teacher: e.teacher,
+        date: e.date,
+        qobliyah_subuh: e.qobliyahSubuh,
+        qobliyah_dzuhur: e.qobliyahDzuhur,
+        bakdiyah_dzuhur: e.bakdiyahDzuhur,
+        bakdiyah_maghrib: e.bakdiyahMaghrib,
+        bakdiyah_isya: e.bakdiyahIsya,
+        quran_unit: e.quranUnit,
+        quran_amount: e.quranAmount,
+        tahajud_done: e.tahajudDone,
+        tahajud_rakaat: e.tahajudRakaat,
+        notes: e.notes,
+        updated_at: e.updatedAt,
+      };
+    }
+
+    function rowToEntry(r) {
+      return normalizeEntry({
+        id: r.id,
+        teacher: r.teacher,
+        date: r.date,
+        qobliyahSubuh: r.qobliyah_subuh,
+        qobliyahDzuhur: r.qobliyah_dzuhur,
+        bakdiyahDzuhur: r.bakdiyah_dzuhur,
+        bakdiyahMaghrib: r.bakdiyah_maghrib,
+        bakdiyahIsya: r.bakdiyah_isya,
+        quranUnit: r.quran_unit,
+        quranAmount: Number(r.quran_amount) || 0,
+        tahajudDone: r.tahajud_done,
+        tahajudRakaat: r.tahajud_rakaat,
+        notes: r.notes,
+        updatedAt: r.updated_at,
+      });
+    }
+
+    function sortEntries(list) {
+      return list.sort((a, b) => {
+        if (a.date !== b.date) return b.date.localeCompare(a.date);
+        return a.teacher.localeCompare(b.teacher);
+      });
+    }
+
+    async function fetchEntriesFromSupabase() {
+      const { data, error } = await supabase
+        .from(TABLE_NAME)
+        .select('*')
+        .eq('workspace_id', state.workspaceId);
+      if (error) throw error;
+
+      const loaded = sortEntries((data || []).map(rowToEntry).filter(Boolean));
+      state.entries = loaded;
+      saveCachedEntries(loaded, state.workspaceId);
+      state.connectionStatus = 'online';
+      updateOnlineStatusUI();
+
+      syncFormIfCurrentTeacherDateUpdated();
+      if (state.isAdminAuthenticated) renderRecapDashboard();
+    }
+
+    function subscribeToEntries() {
+      state.teachers = loadCachedTeachers(state.workspaceId);
+      refreshTeacherUI();
+
+      if (realtimeChannel && supabase) {
+        supabase.removeChannel(realtimeChannel);
+        realtimeChannel = null;
+      }
+
+      if (!supabase) {
+        state.connectionStatus = 'local';
+        state.entries = loadCachedEntries(state.workspaceId);
+        updateOnlineStatusUI();
+        if (state.isAdminAuthenticated) renderRecapDashboard();
+        return;
+      }
+
+      state.connectionStatus = 'connecting';
+      updateOnlineStatusUI();
+
+      const fallbackToLocal = () => {
+        state.connectionStatus = 'local';
+        state.entries = loadCachedEntries(state.workspaceId);
+        updateOnlineStatusUI();
+        if (state.isAdminAuthenticated) renderRecapDashboard();
+      };
+
+      fetchEntriesFromSupabase().catch(fallbackToLocal);
+      fetchTeachersFromSupabase().catch(() => {});
+
+      // Realtime: setiap perubahan pada tabel memicu pengambilan ulang data ruang aktif
+      realtimeChannel = supabase
+        .channel(`mutabaah_${state.workspaceId}_${Date.now()}`)
+        .on('postgres_changes', { event: '*', schema: 'public', table: TABLE_NAME }, () => {
+          fetchEntriesFromSupabase().catch(() => {});
+        })
+        .on('postgres_changes', { event: '*', schema: 'public', table: TEACHERS_TABLE }, () => {
+          fetchTeachersFromSupabase().catch(() => {});
+        })
+        .subscribe((status) => {
+          if (status === 'CHANNEL_ERROR' || status === 'TIMED_OUT') {
+            // Data tetap bisa disimpan; hanya update otomatis yang tertunda
+            console.warn('Realtime Supabase:', status);
+          }
+        });
+    }
+
+    async function initSupabaseSync() {
+      state.entries = loadCachedEntries(state.workspaceId);
+      state.teachers = loadCachedTeachers(state.workspaceId);
+      refreshTeacherUI();
+      updateOnlineStatusUI();
+
+      const configured = SUPABASE_URL && SUPABASE_ANON_KEY
+        && !SUPABASE_URL.includes('GANTI_') && !SUPABASE_ANON_KEY.includes('GANTI_');
+      if (!configured) {
+        state.connectionStatus = 'local';
+        updateOnlineStatusUI();
+        return;
+      }
+
+      try {
+        supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        subscribeToEntries();
+      } catch (_err) {
+        supabase = null;
+        state.connectionStatus = 'local';
+        updateOnlineStatusUI();
+      }
+    }
+
+    async function persistEntryToCloud(entry) {
+      const normalized = normalizeEntry(entry);
+      if (!normalized) throw new Error('Data entri tidak valid.');
+
+      const idx = state.entries.findIndex((item) => item.id === normalized.id);
+      const nextList = [...state.entries];
+      if (idx >= 0) {
+        nextList[idx] = normalized;
+      } else {
+        nextList.push(normalized);
+      }
+      state.entries = sortEntries(nextList);
+      saveCachedEntries(state.entries, state.workspaceId);
+
+      if (supabase) {
+        try {
+          const { error } = await supabase
+            .from(TABLE_NAME)
+            .upsert(entryToRow(normalized), { onConflict: 'workspace_id,id' });
+          if (error) throw error;
+          state.connectionStatus = 'online';
+          updateOnlineStatusUI();
+          return 'cloud';
+        } catch (_err) {
+          state.connectionStatus = 'local';
+          updateOnlineStatusUI();
+          return 'local';
+        }
+      }
+      return 'local';
+    }
+
+    async function deleteEntryFromCloud(entryId) {
+      const filtered = state.entries.filter((item) => item.id !== entryId);
+      state.entries = filtered;
+      saveCachedEntries(filtered, state.workspaceId);
+
+      if (supabase) {
+        try {
+          const { error } = await supabase
+            .from(TABLE_NAME)
+            .delete()
+            .eq('workspace_id', state.workspaceId)
+            .eq('id', entryId);
+          if (error) throw error;
+          state.connectionStatus = 'online';
+          updateOnlineStatusUI();
+        } catch (_err) {
+          state.connectionStatus = 'local';
+          updateOnlineStatusUI();
+        }
+      }
+    }
+
+    async function batchWriteEntriesToCloud(entriesArray) {
+      const validEntries = entriesArray.map(normalizeEntry).filter(Boolean);
+      const mapById = new Map();
+      state.entries.forEach((item) => mapById.set(item.id, item));
+      validEntries.forEach((item) => mapById.set(item.id, item));
+
+      state.entries = sortEntries(Array.from(mapById.values()));
+      saveCachedEntries(state.entries, state.workspaceId);
+
+      if (supabase && validEntries.length > 0) {
+        try {
+          const { error } = await supabase
+            .from(TABLE_NAME)
+            .upsert(validEntries.map(entryToRow), { onConflict: 'workspace_id,id' });
+          if (error) throw error;
+          state.connectionStatus = 'online';
+          updateOnlineStatusUI();
+        } catch (_err) {
+          state.connectionStatus = 'local';
+          updateOnlineStatusUI();
+        }
+      }
+    }
+
+    async function clearAllEntriesFromCloud() {
+      state.entries = [];
+      saveCachedEntries([], state.workspaceId);
+
+      if (supabase) {
+        try {
+          const { error } = await supabase
+            .from(TABLE_NAME)
+            .delete()
+            .eq('workspace_id', state.workspaceId);
+          if (error) throw error;
+          state.connectionStatus = 'online';
+          updateOnlineStatusUI();
+        } catch (_err) {
+          state.connectionStatus = 'local';
+          updateOnlineStatusUI();
+        }
+      }
+    }
+
+    // =========================================================================
+    // DAFTAR USTADZ / USTADZAH (DISIMPAN DI SUPABASE, DIKELOLA PIMPINAN)
+    // =========================================================================
+    const TEACHERS_TABLE = 'mutabaah_teachers';
+    const TEACHERS_CACHE_PREFIX = 'asatidz_rabbani_pontren_jb_teachers_v1_';
+
+    function normalizeTeacher(raw) {
+      if (!raw || typeof raw !== 'object') return null;
+      const name = String(raw.name || '').trim();
+      if (!name) return null;
+      return { name, nameAr: String(raw.nameAr ?? raw.name_ar ?? '').trim() };
+    }
+
+    function loadCachedTeachers(wsId = state.workspaceId) {
+      try {
+        const raw = localStorage.getItem(TEACHERS_CACHE_PREFIX + wsId);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed)) return parsed.map(normalizeTeacher).filter(Boolean);
+        }
+      } catch (_err) {
+        // Abaikan error storage
+      }
+      return [];
+    }
+
+    function saveCachedTeachers(list, wsId = state.workspaceId) {
+      try {
+        localStorage.setItem(TEACHERS_CACHE_PREFIX + wsId, JSON.stringify(list));
+      } catch (_err) {
+        // Abaikan error storage
+      }
+    }
+
+    function getRecapTeacherNames(filtered, filterTeacher) {
+      if (filterTeacher !== 'ALL') return [filterTeacher];
+      const base = state.teachers.map((t) => t.name);
+      const extras = [...new Set(filtered.map((e) => e.teacher))]
+        .filter((n) => !base.includes(n))
+        .sort((a, b) => a.localeCompare(b, 'id'));
+      return [...base, ...extras];
+    }
+
+    function populateTeacherSelects() {
+      const names = state.teachers.map((t) => t.name);
+      const optionsHtml = names.map((n) => `<option value="${escapeHtml(n)}">${escapeHtml(n)}</option>`).join('');
+
+      const sel = document.getElementById('teacherSelect');
+      if (sel) {
+        const cur = sel.value;
+        const placeholder = names.length ? '-- Pilih Nama --' : '-- Belum ada nama (hubungi pimpinan) --';
+        sel.innerHTML = `<option value="" disabled>${placeholder}</option>${optionsHtml}`;
+        sel.value = names.includes(cur) ? cur : '';
+      }
+
+      const filterSel = document.getElementById('filterTeacherSelect');
+      if (filterSel) {
+        const cur = filterSel.value;
+        filterSel.innerHTML = `<option value="ALL">Semua Ustadz / Ustadzah</option>${optionsHtml}`;
+        filterSel.value = names.includes(cur) ? cur : 'ALL';
+      }
+    }
+
+    function renderTeacherManager() {
+      const box = document.getElementById('teacherListContainer');
+      const badge = document.getElementById('teacherCountBadge');
+      if (badge) badge.textContent = `${state.teachers.length} nama`;
+      if (!box) return;
+
+      if (state.teachers.length === 0) {
+        box.innerHTML = '<p class="text-xs text-slate-500">Belum ada nama. Tambahkan nama ustadz/ustadzah pada form di atas.</p>';
+        return;
+      }
+
+      box.innerHTML = state.teachers.map((t, i) => `
+        <div class="inline-flex items-center gap-2 pl-3.5 pr-1.5 py-1.5 rounded-2xl bg-sky-50 border border-sky-200 text-sm">
+          <div class="flex items-center gap-2 text-left">
+            <span class="font-semibold text-sky-950">${escapeHtml(t.name)}</span>
+            ${t.nameAr ? `<span dir="rtl" class="text-amber-800 font-bold" style="font-family: Amiri, serif; font-size: 1.1rem;">${escapeHtml(t.nameAr)}</span>` : ''}
+          </div>
+          <button type="button" onclick="confirmDeleteTeacher(${i})" aria-label="Hapus ${escapeHtml(t.name)}"
+            class="w-8 h-8 rounded-xl text-rose-600 hover:bg-rose-50 cursor-pointer text-xl leading-none">&times;</button>
+        </div>
+      `).join('');
+    }
+
+    function refreshTeacherUI() {
+      populateTeacherSelects();
+      renderTeacherManager();
+      if (state.isAdminAuthenticated) renderRecapDashboard();
+    }
+
+    async function fetchTeachersFromSupabase() {
+      const { data, error } = await supabase
+        .from(TEACHERS_TABLE)
+        .select('name,name_ar,created_at')
+        .eq('workspace_id', state.workspaceId)
+        .order('created_at', { ascending: true });
+      if (error) throw error;
+
+      state.teachers = (data || []).map(normalizeTeacher).filter(Boolean);
+      saveCachedTeachers(state.teachers);
+      refreshTeacherUI();
+    }
+
+    async function addTeacherToCloud(name, nameAr) {
+      const lower = name.toLowerCase();
+      const existing = state.teachers.find((t) => t.name.toLowerCase() === lower);
+      const finalName = existing ? existing.name : name;
+      const record = { name: finalName, nameAr };
+
+      if (existing) {
+        state.teachers = state.teachers.map((t) => (t === existing ? record : t));
+      } else {
+        state.teachers = [...state.teachers, record];
+      }
+      saveCachedTeachers(state.teachers);
+      refreshTeacherUI();
+
+      if (supabase) {
+        try {
+          const { error } = await supabase
+            .from(TEACHERS_TABLE)
+            .upsert({ workspace_id: state.workspaceId, name: finalName, name_ar: nameAr }, { onConflict: 'workspace_id,name' });
+          if (error) throw error;
+          return { mode: 'cloud', updated: Boolean(existing) };
+        } catch (_err) {
+          return { mode: 'local', updated: Boolean(existing) };
+        }
+      }
+      return { mode: 'local', updated: Boolean(existing) };
+    }
+
+    async function deleteTeacherFromCloud(name) {
+      state.teachers = state.teachers.filter((t) => t.name !== name);
+      saveCachedTeachers(state.teachers);
+      refreshTeacherUI();
+
+      if (supabase) {
+        try {
+          const { error } = await supabase
+            .from(TEACHERS_TABLE)
+            .delete()
+            .eq('workspace_id', state.workspaceId)
+            .eq('name', name);
+          if (error) throw error;
+          return 'cloud';
+        } catch (_err) {
+          return 'local';
+        }
+      }
+      return 'local';
+    }
+
+    window.handleAddTeacher = async function handleAddTeacher(event) {
+      event.preventDefault();
+      const nameInput = document.getElementById('teacherNameInput');
+      const arInput = document.getElementById('teacherNameArInput');
+      const name = String(nameInput?.value || '').trim().replace(/\s+/g, ' ');
+      const nameAr = String(arInput?.value || '').trim().replace(/\s+/g, ' ');
+
+      if (!name) {
+        showToast('Nama tidak boleh kosong.', 'error');
+        nameInput?.focus();
+        return;
+      }
+
+      const exists = state.teachers.some((t) => t.name.toLowerCase() === name.toLowerCase());
+      showPopup({
+        type: 'confirm',
+        title: exists ? 'Perbarui Nama?' : 'Tambahkan Nama?',
+        message: exists ? 'Nama ini sudah ada. Nama Arabnya akan diperbarui.' : 'Nama ini akan masuk ke daftar ustadz/ustadzah.',
+        rows: [['Nama', name], ['Nama Arab', nameAr || '—']],
+        confirmText: 'Ya, Simpan',
+        cancelText: 'Batal',
+        onConfirm: async () => {
+      const result = await addTeacherToCloud(name, nameAr);
+      window.clearTeacherForm();
+      const savedName = state.teachers.find((t) => t.name.toLowerCase() === name.toLowerCase())?.name || name;
+      const sel = document.getElementById('teacherSelect');
+      if (sel) {
+        sel.value = savedName;
+        window.onTeacherOrDateChange();
+      }
+      const box = document.getElementById('selfRegisterBox');
+      if (box) box.open = false;
+      const verb = result.updated ? 'diperbarui' : 'ditambahkan';
+      if (result.mode === 'cloud') {
+        showToast(`Nama "${name}" ${verb} dan tersinkronisasi.`, 'success');
+      } else {
+        showToast(`Nama "${name}" ${verb} pada perangkat ini (belum tersinkron ke cloud).`, 'info');
+      }
+        },
+      });
+    };
+
+    window.clearTeacherForm = function clearTeacherForm() {
+      const nameInput = document.getElementById('teacherNameInput');
+      const arInput = document.getElementById('teacherNameArInput');
+      if (nameInput) nameInput.value = '';
+      if (arInput) arInput.value = '';
+    };
+
+    window.confirmDeleteTeacher = function confirmDeleteTeacher(index) {
+      const t = state.teachers[index];
+      if (!t) return;
+      openConfirmModal(
+        'Hapus Nama dari Daftar',
+        `Hapus "${t.name}" dari daftar? Catatan ceklist lama atas nama ini tetap tersimpan.`,
+        async () => {
+          await deleteTeacherFromCloud(t.name);
+          showToast(`Nama "${t.name}" dihapus dari daftar.`, 'success');
+        }
+      );
+    };
+
+    // =========================================================================
+    // LOGIKA FORM CEKLIST HARIAN
+    // =========================================================================
+    function syncFormIfCurrentTeacherDateUpdated() {
+      const teacher = document.getElementById('teacherSelect')?.value || '';
+      const date = document.getElementById('dateInput')?.value || '';
+      if (!teacher || !date) return;
+
+      const existing = state.entries.find((e) => e.teacher === teacher && e.date === date);
+      const badge = document.getElementById('existingEntryBadge');
+      if (badge) {
+        badge.classList.toggle('hidden', !existing);
+      }
+    }
+
+    window.onTeacherOrDateChange = function onTeacherOrDateChange() {
+      const teacher = document.getElementById('teacherSelect')?.value || '';
+      const date = document.getElementById('dateInput')?.value || '';
+      const badge = document.getElementById('existingEntryBadge');
+
+      if (!teacher || !date) {
+        if (badge) badge.classList.add('hidden');
+        updateProgressIndicator();
+        return;
+      }
+
+      const existing = state.entries.find((e) => e.teacher === teacher && e.date === date);
+      if (existing) {
+        if (badge) badge.classList.remove('hidden');
+        RAWATIB_ITEMS.forEach((item) => {
+          const el = document.getElementById(item.key);
+          if (el) el.checked = Boolean(existing[item.key]);
+        });
+
+        const unitSelect = document.getElementById('quranUnitSelect');
+        const amountInput = document.getElementById('quranAmountInput');
+        if (unitSelect) unitSelect.value = existing.quranUnit || 'Lembar';
+        if (amountInput) amountInput.value = existing.quranAmount > 0 ? existing.quranAmount : 0;
+
+        setTahajudStatus(Boolean(existing.tahajudDone), false);
+        const rakaatInput = document.getElementById('tahajudRakaatInput');
+        if (rakaatInput) rakaatInput.value = existing.tahajudDone ? (existing.tahajudRakaat || 3) : 3;
+
+        const notesInput = document.getElementById('notesInput');
+        if (notesInput) notesInput.value = existing.notes || '';
+      } else {
+        if (badge) badge.classList.add('hidden');
+      }
+
+      handleQuranUnitChange(false);
+      updateProgressIndicator();
+    };
+
+    window.toggleAllRawatib = function toggleAllRawatib() {
+      const checkboxes = RAWATIB_ITEMS.map((item) => document.getElementById(item.key)).filter(Boolean);
+      const allChecked = checkboxes.length > 0 && checkboxes.every((cb) => cb.checked);
+      checkboxes.forEach((cb) => {
+        cb.checked = !allChecked;
+      });
+      updateProgressIndicator();
+    };
+
+    window.handleQuranUnitChange = function handleQuranUnitChange(shouldUpdateProgress = true) {
+      const unitSelect = document.getElementById('quranUnitSelect');
+      const label = document.getElementById('quranUnitLabel');
+      const amountInput = document.getElementById('quranAmountInput');
+      const unit = unitSelect ? unitSelect.value : 'Lembar';
+
+      if (label) label.textContent = `(${unit})`;
+      if (amountInput) {
+        amountInput.step = unit === 'Juz' ? '0.5' : '1';
+        amountInput.max = unit === 'Juz' ? '30' : '600';
+      }
+      if (shouldUpdateProgress) {
+        handleQuranAmountChange();
+      }
+    };
+
+    window.handleQuranAmountChange = function handleQuranAmountChange() {
+      const unitSelect = document.getElementById('quranUnitSelect');
+      const amountInput = document.getElementById('quranAmountInput');
+      const banner = document.getElementById('quranStatusBanner');
+
+      const unit = unitSelect ? unitSelect.value : 'Lembar';
+      const rawVal = amountInput ? Number(amountInput.value) : 0;
+      const amount = Number.isFinite(rawVal) && rawVal > 0 ? roundHalf(rawVal) : 0;
+
+      if (banner) {
+        if (amount > 0) {
+          banner.className = 'rounded-2xl bg-sky-100/90 border border-amber-300/80 px-3.5 py-2.5 text-xs text-sky-950 font-semibold';
+          banner.textContent = `Status: Membaca ${formatNumberId(amount)} ${unit} hari ini.`;
+        } else {
+          banner.className = 'rounded-2xl bg-sky-50/90 border border-sky-200/80 px-3.5 py-2.5 text-xs text-sky-950 font-medium';
+          banner.textContent = "Status: Belum tercatat membaca Al-Qur'an hari ini.";
+        }
+      }
+
+      updateProgressIndicator();
+    };
+
+    window.setQuranPreset = function setQuranPreset(unit, amount) {
+      const unitSelect = document.getElementById('quranUnitSelect');
+      const amountInput = document.getElementById('quranAmountInput');
+      if (unitSelect && (unit === 'Lembar' || unit === 'Juz')) {
+        unitSelect.value = unit;
+      }
+      if (amountInput) {
+        amountInput.value = roundHalf(amount);
+      }
+      handleQuranUnitChange(true);
+    };
+
+    window.setTahajudStatus = function setTahajudStatus(isDone, shouldUpdateProgress = true) {
+      state.tahajudDone = Boolean(isDone);
+      const yesBtn = document.getElementById('tahajudYesBtn');
+      const noBtn = document.getElementById('tahajudNoBtn');
+      const rakaatBox = document.getElementById('tahajudRakaatBox');
+      const banner = document.getElementById('tahajudStatusBanner');
+
+      if (yesBtn && noBtn) {
+        if (state.tahajudDone) {
+          yesBtn.className = 'flex items-center justify-center gap-2 py-3 px-4 rounded-2xl border text-sm font-extrabold transition-all cursor-pointer gold-gradient text-sky-950 border-amber-300 shadow-xs';
+          noBtn.className = 'flex items-center justify-center gap-2 py-3 px-4 rounded-2xl border text-sm font-semibold transition-all cursor-pointer bg-white text-slate-700 border-sky-200 hover:bg-sky-50';
+        } else {
+          yesBtn.className = 'flex items-center justify-center gap-2 py-3 px-4 rounded-2xl border text-sm font-semibold transition-all cursor-pointer bg-white text-slate-700 border-sky-200 hover:bg-sky-50';
+          noBtn.className = 'flex items-center justify-center gap-2 py-3 px-4 rounded-2xl border text-sm font-bold transition-all cursor-pointer bg-slate-200 text-slate-900 border-slate-300';
+        }
+      }
+
+      if (rakaatBox) {
+        rakaatBox.classList.toggle('hidden', !state.tahajudDone);
+      }
+
+      if (banner) {
+        if (state.tahajudDone) {
+          const rakaat = Math.max(1, Math.round(Number(document.getElementById('tahajudRakaatInput')?.value) || 3));
+          banner.className = 'rounded-2xl bg-amber-100/85 border border-amber-300 px-3.5 py-2.5 text-xs text-amber-950 font-semibold';
+          banner.textContent = `Status: Melaksanakan shalat malam (${rakaat} rakaat).`;
+        } else {
+          banner.className = 'rounded-2xl bg-slate-100/90 border border-slate-200 px-3.5 py-2.5 text-xs text-slate-600 font-medium';
+          banner.textContent = 'Status: Belum melaksanakan shalat malam.';
+        }
+      }
+
+      if (shouldUpdateProgress) {
+        updateProgressIndicator();
+      }
+    };
+
+    window.setTahajudRakaat = function setTahajudRakaat(rakaat) {
+      const input = document.getElementById('tahajudRakaatInput');
+      if (input) {
+        input.value = Math.max(1, Math.round(Number(rakaat) || 3));
+      }
+      if (!state.tahajudDone) {
+        setTahajudStatus(true, false);
+      }
+      updateProgressIndicator();
+    };
+
+    function updateProgressIndicator() {
+      const quranUnit = document.getElementById('quranUnitSelect')?.value || 'Lembar';
+      const quranAmount = roundHalf(Number(document.getElementById('quranAmountInput')?.value) || 0);
+      const rakaatInput = document.getElementById('tahajudRakaatInput');
+      const rakaat = state.tahajudDone ? Math.max(1, Math.round(Number(rakaatInput?.value) || 3)) : 0;
+
+      const tahajudBanner = document.getElementById('tahajudStatusBanner');
+      if (tahajudBanner) {
+        if (state.tahajudDone) {
+          tahajudBanner.className = 'rounded-2xl bg-amber-100/85 border border-amber-300 px-3.5 py-2.5 text-xs text-amber-950 font-semibold';
+          tahajudBanner.textContent = `Status: Melaksanakan shalat malam (${rakaat} rakaat).`;
+        } else {
+          tahajudBanner.className = 'rounded-2xl bg-slate-100/90 border border-slate-200 px-3.5 py-2.5 text-xs text-slate-600 font-medium';
+          tahajudBanner.textContent = 'Status: Belum melaksanakan shalat malam.';
+        }
+      }
+
+      const draft = {
+        qobliyahSubuh: Boolean(document.getElementById('qobliyahSubuh')?.checked),
+        qobliyahDzuhur: Boolean(document.getElementById('qobliyahDzuhur')?.checked),
+        bakdiyahDzuhur: Boolean(document.getElementById('bakdiyahDzuhur')?.checked),
+        bakdiyahMaghrib: Boolean(document.getElementById('bakdiyahMaghrib')?.checked),
+        bakdiyahIsya: Boolean(document.getElementById('bakdiyahIsya')?.checked),
+        quranRead: quranAmount > 0,
+        quranUnit,
+        quranAmount,
+        tahajudDone: state.tahajudDone,
+        tahajudRakaat: rakaat,
+      };
+
+      const stats = calculateEntryStats(draft);
+      const percentEl = document.getElementById('dailyProgressPercent');
+      const barEl = document.getElementById('dailyProgressBar');
+      const summaryEl = document.getElementById('dailyProgressSummary');
+
+      if (percentEl) percentEl.textContent = `${stats.percentage}%`;
+      if (barEl) barEl.style.width = `${stats.percentage}%`;
+      if (summaryEl) {
+        const quranText = quranAmount > 0 ? ` • ${formatNumberId(quranAmount)} ${quranUnit}` : '';
+        summaryEl.textContent = `${stats.totalPoints} dari ${stats.maxPoints} poin ibadah utama terpenuhi${quranText}`;
+      }
+    }
+
+    window.confirmResetForm = function confirmResetForm() {
+      showPopup({
+        type: 'confirm',
+        title: 'Kosongkan Form?',
+        message: 'Semua isian ceklist pada form ini akan dikosongkan (data yang sudah tersimpan tidak terhapus).',
+        confirmText: 'Ya, Kosongkan',
+        cancelText: 'Batal',
+        onConfirm: () => window.resetCurrentForm(),
+      });
+    };
+
+    window.resetCurrentForm = function resetCurrentForm() {
+      RAWATIB_ITEMS.forEach((item) => {
+        const el = document.getElementById(item.key);
+        if (el) el.checked = false;
+      });
+      const unitSelect = document.getElementById('quranUnitSelect');
+      const amountInput = document.getElementById('quranAmountInput');
+      const notesInput = document.getElementById('notesInput');
+      const rakaatInput = document.getElementById('tahajudRakaatInput');
+
+      if (unitSelect) unitSelect.value = 'Lembar';
+      if (amountInput) amountInput.value = 0;
+      if (notesInput) notesInput.value = '';
+      if (rakaatInput) rakaatInput.value = 3;
+
+      setTahajudStatus(false, false);
+      handleQuranUnitChange(false);
+      updateProgressIndicator();
+    };
+
+    window.handleSaveChecklist = async function handleSaveChecklist(event) {
+      event.preventDefault();
+      const teacher = document.getElementById('teacherSelect')?.value || '';
+      const date = document.getElementById('dateInput')?.value || '';
+
+      if (!teacher) {
+        showToast('Silakan pilih nama ustadz / ustadzah terlebih dahulu.', 'error');
+        return;
+      }
+      if (!date) {
+        showToast('Silakan pilih tanggal ceklist terlebih dahulu.', 'error');
+        return;
+      }
+
+      const quranUnit = document.getElementById('quranUnitSelect')?.value === 'Juz' ? 'Juz' : 'Lembar';
+      const quranAmount = roundHalf(Number(document.getElementById('quranAmountInput')?.value) || 0);
+      const tahajudRakaat = state.tahajudDone
+        ? Math.max(1, Math.round(Number(document.getElementById('tahajudRakaatInput')?.value) || 3))
+        : 0;
+      const notes = String(document.getElementById('notesInput')?.value || '').trim();
+
+      const entry = normalizeEntry({
+        id: buildEntryId(teacher, date),
+        teacher,
+        date,
+        qobliyahSubuh: Boolean(document.getElementById('qobliyahSubuh')?.checked),
+        qobliyahDzuhur: Boolean(document.getElementById('qobliyahDzuhur')?.checked),
+        bakdiyahDzuhur: Boolean(document.getElementById('bakdiyahDzuhur')?.checked),
+        bakdiyahMaghrib: Boolean(document.getElementById('bakdiyahMaghrib')?.checked),
+        bakdiyahIsya: Boolean(document.getElementById('bakdiyahIsya')?.checked),
+        quranRead: quranAmount > 0,
+        quranUnit,
+        quranAmount,
+        tahajudDone: state.tahajudDone,
+        tahajudRakaat,
+        notes,
+        updatedAt: new Date().toISOString(),
+      });
+
+      const st = calculateEntryStats(entry);
+      const quranText = entry.quranAmount > 0 ? `${formatNumberId(entry.quranAmount)} ${entry.quranUnit}` : 'Tidak membaca';
+      const nightText = entry.tahajudDone ? `Ya (${entry.tahajudRakaat} rakaat)` : 'Tidak';
+
+      showPopup({
+        type: 'confirm',
+        title: 'Simpan Ceklist Harian?',
+        message: 'Periksa kembali data berikut sebelum disimpan.',
+        rows: [
+          ['Nama', teacher],
+          ['Tanggal', formatIndonesianDate(date)],
+          ['Shalat rawatib', `${st.rawatibCount} dari ${RAWATIB_ITEMS.length}`],
+          ["Baca Al-Qur'an", quranText],
+          ['Shalat malam', nightText],
+          ['Capaian hari ini', `${st.percentage}%`],
+        ],
+        confirmText: 'Ya, Simpan',
+        cancelText: 'Periksa Lagi',
+        onConfirm: () => commitChecklistSave(entry),
+      });
+    };
+
+    async function commitChecklistSave(entry) {
+      const saveBtn = document.getElementById('saveChecklistBtn');
+      if (saveBtn) saveBtn.disabled = true;
+      showLoadingPopup('Sedang menyimpan ceklist...', 'Menyimpan');
+
+      try {
+        const mode = await persistEntryToCloud(entry);
+        const badge = document.getElementById('existingEntryBadge');
+        if (badge) badge.classList.remove('hidden');
+
+        if (state.isAdminAuthenticated) {
+          renderRecapDashboard();
+        }
+
+        if (mode === 'cloud') {
+          showPopup({
+            type: 'success',
+            title: 'Alhamdulillah, Tersimpan',
+            message: `Ceklist ${entry.teacher} (${formatIndonesianDate(entry.date)}) berhasil disimpan dan tersinkronisasi online.`,
+            confirmText: 'Selesai',
+            autoClose: 3200,
+          });
+        } else {
+          showPopup({
+            type: 'info',
+            title: 'Tersimpan di Perangkat',
+            message: `Ceklist ${entry.teacher} (${formatIndonesianDate(entry.date)}) tersimpan di perangkat ini, tetapi belum tersinkron ke cloud. Periksa koneksi internet lalu simpan ulang.`,
+            confirmText: 'Mengerti',
+          });
+        }
+      } catch (_err) {
+        showPopup({
+          type: 'error',
+          title: 'Gagal Menyimpan',
+          message: 'Terjadi kesalahan saat menyimpan ceklist. Silakan coba lagi.',
+          confirmText: 'Tutup',
+        });
+      } finally {
+        if (saveBtn) saveBtn.disabled = false;
+      }
+    }
+
+    // =========================================================================
+    // NAVIGASI TAB & AUTENTIKASI ADMIN (PASSWORD: 12234)
+    // =========================================================================
+    window.switchTab = function switchTab(tabName) {
+      state.activeTab = tabName === 'recap' ? 'recap' : 'checklist';
+
+      const checklistSection = document.getElementById('checklistSection');
+      const recapSection = document.getElementById('recapSection');
+      const btnChecklist = document.getElementById('tabBtnChecklist');
+      const btnRecap = document.getElementById('tabBtnRecap');
+
+      if (state.activeTab === 'checklist') {
+        checklistSection?.classList.remove('hidden');
+        recapSection?.classList.add('hidden');
+        if (btnChecklist) {
+          btnChecklist.className = 'inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-all cursor-pointer gold-gradient text-sky-950 shadow-xs';
+        }
+        if (btnRecap) {
+          btnRecap.className = 'inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all cursor-pointer text-sky-900 hover:bg-white';
+        }
+      } else {
+        checklistSection?.classList.add('hidden');
+        recapSection?.classList.remove('hidden');
+        if (btnRecap) {
+          btnRecap.className = 'inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-all cursor-pointer gold-gradient text-sky-950 shadow-xs';
+        }
+        if (btnChecklist) {
+          btnChecklist.className = 'inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all cursor-pointer text-sky-900 hover:bg-white';
+        }
+        updateAdminGateView();
+      }
+    };
+
+    function updateAdminGateView() {
+      const lockCard = document.getElementById('adminLockCard');
+      const dashboard = document.getElementById('adminDashboard');
+      if (state.isAdminAuthenticated) {
+        lockCard?.classList.add('hidden');
+        dashboard?.classList.remove('hidden');
+        renderRecapDashboard();
+      } else {
+        lockCard?.classList.remove('hidden');
+        dashboard?.classList.add('hidden');
+      }
+    }
+
+    window.togglePasswordVisibility = function togglePasswordVisibility() {
+      const input = document.getElementById('adminPasswordInput');
+      if (!input) return;
+      input.type = input.type === 'password' ? 'text' : 'password';
+    };
+
+    window.handleAdminLogin = function handleAdminLogin(event) {
+      event.preventDefault();
+      const input = document.getElementById('adminPasswordInput');
+      const errorEl = document.getElementById('adminLoginError');
+      const entered = String(input?.value || '').trim();
+
+      if (entered === ADMIN_PASSWORD) {
+        state.isAdminAuthenticated = true;
+        if (errorEl) errorEl.classList.add('hidden');
+        if (input) input.value = '';
+        updateAdminGateView();
+        showToast('Akses Rekap Pimpinan berhasil dibuka.', 'success');
+      } else {
+        if (errorEl) errorEl.classList.remove('hidden');
+        if (input) {
+          input.focus();
+          input.select();
+        }
+      }
+    };
+
+    window.lockAdminSession = function lockAdminSession() {
+      state.isAdminAuthenticated = false;
+      updateAdminGateView();
+      showToast('Sesi pimpinan dikunci kembali.', 'info');
+    };
+
+    // =========================================================================
+    // PENGATURAN RUANG DATA
+    // =========================================================================
+    window.openCloudConfigModal = function openCloudConfigModal() {
+      const modal = document.getElementById('cloudConfigModal');
+      const input = document.getElementById('cfgWorkspaceId');
+      if (input) input.value = state.workspaceId;
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    };
+
+    window.closeCloudConfigModal = function closeCloudConfigModal() {
+      const modal = document.getElementById('cloudConfigModal');
+      if (!modal) return;
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    };
+
+    window.handleSaveCloudConfig = function handleSaveCloudConfig(event) {
+      event.preventDefault();
+      const input = document.getElementById('cfgWorkspaceId');
+      const nextWs = String(input?.value || '').trim();
+
+      if (!/^[a-zA-Z0-9_-]{3,40}$/.test(nextWs)) {
+        showToast('Kode ruang harus 3-40 karakter (huruf, angka, _ atau -).', 'error');
+        return;
+      }
+
+      state.workspaceId = nextWs;
+      saveWorkspaceIdToStorage(nextWs);
+      window.closeCloudConfigModal();
+      state.entries = loadCachedEntries(nextWs);
+      updateOnlineStatusUI();
+      subscribeToEntries();
+      if (state.isAdminAuthenticated) {
+        renderRecapDashboard();
+      }
+      showToast(`Ruang data diubah ke "${nextWs}".`, 'success');
+    };
+
+    window.resetWorkspaceToDefault = function resetWorkspaceToDefault() {
+      state.workspaceId = 'pontren_jb_utama';
+      saveWorkspaceIdToStorage('pontren_jb_utama');
+      const input = document.getElementById('cfgWorkspaceId');
+      if (input) input.value = 'pontren_jb_utama';
+      window.closeCloudConfigModal();
+      state.entries = loadCachedEntries('pontren_jb_utama');
+      updateOnlineStatusUI();
+      subscribeToEntries();
+      if (state.isAdminAuthenticated) {
+        renderRecapDashboard();
+      }
+      showToast('Kembali ke ruang data utama (pontren_jb_utama).', 'info');
+    };
+
+    // =========================================================================
+    // FILTER & RENDER DASHBOARD REKAP PIMPINAN
+    // =========================================================================
+    window.onFilterPeriodTypeChange = function onFilterPeriodTypeChange() {
+      const periodType = document.getElementById('filterPeriodType')?.value || 'all';
+      const dateWrapper = document.getElementById('filterDateWrapper');
+      const monthWrapper = document.getElementById('filterMonthWrapper');
+
+      if (periodType === 'day') {
+        dateWrapper?.classList.remove('hidden');
+        monthWrapper?.classList.add('hidden');
+      } else if (periodType === 'month') {
+        dateWrapper?.classList.add('hidden');
+        monthWrapper?.classList.remove('hidden');
+      } else {
+        dateWrapper?.classList.add('hidden');
+        monthWrapper?.classList.add('hidden');
+      }
+
+      renderRecapDashboard();
+    };
+
+    window.resetRecapFilters = function resetRecapFilters() {
+      const periodSelect = document.getElementById('filterPeriodType');
+      const teacherSelect = document.getElementById('filterTeacherSelect');
+      if (periodSelect) periodSelect.value = 'all';
+      if (teacherSelect) teacherSelect.value = 'ALL';
+      window.onFilterPeriodTypeChange();
+    };
+
+    function getFilteredEntries() {
+      const periodType = document.getElementById('filterPeriodType')?.value || 'all';
+      const filterDate = document.getElementById('filterDateInput')?.value || '';
+      const filterMonth = document.getElementById('filterMonthInput')?.value || '';
+      const filterTeacher = document.getElementById('filterTeacherSelect')?.value || 'ALL';
+
+      return state.entries.filter((entry) => {
+        if (filterTeacher !== 'ALL' && entry.teacher !== filterTeacher) {
+          return false;
+        }
+        if (periodType === 'day' && filterDate) {
+          return entry.date === filterDate;
+        }
+        if (periodType === 'month' && filterMonth) {
+          return entry.date.startsWith(filterMonth);
+        }
+        return true;
+      });
+    }
+
+    window.renderRecapDashboard = function renderRecapDashboard() {
+      renderRecapDashboardCore();
+      renderMobileCards();
+    };
+
+    function renderMobileCards() {
+      if (!state.isAdminAuthenticated) return;
+      const filtered = getFilteredEntries();
+      const filterTeacher = document.getElementById('filterTeacherSelect')?.value || 'ALL';
+      const list = getRecapTeacherNames(filtered, filterTeacher);
+
+      const sumEl = document.getElementById('teacherSummaryCards');
+      if (sumEl) {
+        sumEl.innerHTML = list.map((name) => {
+          const rows = filtered.filter((e) => e.teacher === name);
+          const n = rows.length;
+          if (!n) {
+            return `<div class="px-4 py-3 flex items-center justify-between text-sm"><span class="font-semibold text-slate-800">${escapeHtml(name)}</span><span class="text-slate-400 text-xs">Belum ada data</span></div>`;
+          }
+          const avg = (fn) => Math.round(rows.reduce((a, r) => a + fn(r), 0) / n);
+          const rw = avg((r) => calculateEntryStats(r).rawatibPercent);
+          const qd = rows.filter((r) => r.quranRead).length;
+          const td = rows.filter((r) => r.tahajudDone).length;
+          const lem = roundHalf(rows.reduce((a, r) => a + calculateEntryStats(r).totalLembar, 0));
+          const juz = roundHalf(rows.reduce((a, r) => a + calculateEntryStats(r).totalJuz, 0));
+          const all = avg((r) => calculateEntryStats(r).percentage);
+          return `<div class="px-4 py-3.5 space-y-2">
+            <div class="flex items-center justify-between"><span class="font-bold text-sky-950">${escapeHtml(name)}</span><span class="font-extrabold text-sky-800">${all}%</span></div>
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-bold">
+              <span class="px-2 py-0.5 rounded-full bg-sky-100 text-sky-900">Rawatib ${rw}%</span>
+              <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900">Qur'an ${qd}/${n}</span>
+              <span class="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-900">Malam ${td}/${n}</span>
+            </div>
+            <p class="text-xs text-slate-500">${n} hari terisi • ${formatNumberId(lem)} Lembar (${formatNumberId(juz)} Juz)</p>
+          </div>`;
+        }).join('');
+      }
+
+      const logEl = document.getElementById('detailLogCards');
+      if (logEl) {
+        if (!filtered.length) {
+          logEl.innerHTML = '<p class="py-8 px-4 text-center text-sm text-slate-500">Belum ada data ceklist yang sesuai dengan filter saat ini.</p>';
+          return;
+        }
+        logEl.innerHTML = filtered.map((e) => {
+          const done = RAWATIB_ITEMS.filter((i) => e[i.key]).map((i) => i.short).join(', ') || 'Tidak ada';
+          const quran = e.quranAmount > 0 ? `${formatNumberId(e.quranAmount)} ${e.quranUnit}` : 'Tidak membaca';
+          const malam = e.tahajudDone ? `Ya (${e.tahajudRakaat} rakaat)` : 'Tidak';
+          return `<div class="px-4 py-3.5 space-y-1.5 text-xs text-slate-700">
+            <div class="flex items-start justify-between gap-2">
+              <div><p class="font-bold text-sm text-sky-950">${escapeHtml(e.teacher)}</p><p class="text-slate-500">${escapeHtml(formatIndonesianDate(e.date))}</p></div>
+              <button type="button" onclick="confirmDeleteEntry('${escapeHtml(e.id)}', '${escapeHtml(e.teacher)}', '${escapeHtml(e.date)}')" class="px-3 py-2 rounded-xl text-xs font-semibold text-rose-600 bg-rose-50 border border-rose-100 cursor-pointer">Hapus</button>
+            </div>
+            <p><span class="font-semibold">Rawatib:</span> ${escapeHtml(done)}</p>
+            <p><span class="font-semibold">Qur'an:</span> ${escapeHtml(quran)} &nbsp;•&nbsp; <span class="font-semibold">Malam:</span> ${escapeHtml(malam)}</p>
+            ${e.notes ? `<p class="text-slate-500"><span class="font-semibold">Catatan:</span> ${escapeHtml(e.notes)}</p>` : ''}
+          </div>`;
+        }).join('');
+      }
+    }
+
+    function renderRecapDashboardCore() {
+      if (!state.isAdminAuthenticated) return;
+
+      const filtered = getFilteredEntries();
+      const filterTeacher = document.getElementById('filterTeacherSelect')?.value || 'ALL';
+
+      // Hitung KPI keseluruhan
+      const totalEntries = filtered.length;
+      const uniqueTeachersCount = new Set(filtered.map((e) => e.teacher)).size;
+      const targetTeacherPool = filterTeacher === 'ALL' ? Math.max(state.teachers.length, uniqueTeachersCount) : 1;
+
+      const avgRawatib = totalEntries > 0
+        ? Math.round(filtered.reduce((sum, e) => sum + calculateEntryStats(e).rawatibPercent, 0) / totalEntries)
+        : 0;
+
+      const quranCount = filtered.filter((e) => e.quranRead).length;
+      const quranRate = totalEntries > 0 ? Math.round((quranCount / totalEntries) * 100) : 0;
+
+      const sumLembar = roundHalf(filtered.reduce((sum, e) => sum + calculateEntryStats(e).totalLembar, 0));
+      const sumJuz = roundHalf(filtered.reduce((sum, e) => sum + calculateEntryStats(e).totalJuz, 0));
+
+      const tahajudCount = filtered.filter((e) => e.tahajudDone).length;
+      const tahajudRate = totalEntries > 0 ? Math.round((tahajudCount / totalEntries) * 100) : 0;
+
+      const kpiTotalEl = document.getElementById('kpiTotalEntries');
+      const kpiTotalSubEl = document.getElementById('kpiTotalEntriesSub');
+      const kpiRawatibEl = document.getElementById('kpiAvgRawatib');
+      const kpiQuranEl = document.getElementById('kpiQuranRate');
+      const kpiQuranSubEl = document.getElementById('kpiQuranSub');
+      const kpiTahajudEl = document.getElementById('kpiTahajudRate');
+
+      if (kpiTotalEl) kpiTotalEl.textContent = String(totalEntries);
+      if (kpiTotalSubEl) kpiTotalSubEl.textContent = `${uniqueTeachersCount} dari ${targetTeacherPool} asatidz pada filter ini`;
+      if (kpiRawatibEl) kpiRawatibEl.textContent = `${avgRawatib}%`;
+      if (kpiQuranEl) kpiQuranEl.textContent = `${quranRate}%`;
+      if (kpiQuranSubEl) kpiQuranSubEl.textContent = `Total ${formatNumberId(sumLembar)} Lembar • ${formatNumberId(sumJuz)} Juz`;
+      if (kpiTahajudEl) kpiTahajudEl.textContent = `${tahajudRate}%`;
+
+      // Render tabel rekap per guru
+      const teacherListToShow = getRecapTeacherNames(filtered, filterTeacher);
+      const summaryBody = document.getElementById('teacherSummaryBody');
+      if (summaryBody) {
+        summaryBody.innerHTML = teacherListToShow
+          .map((name) => {
+            const rows = filtered.filter((e) => e.teacher === name);
+            const daysCount = rows.length;
+
+            if (daysCount === 0) {
+              return `
+                <tr class="hover:bg-sky-50/40 transition-colors">
+                  <td class="py-3.5 px-4 sm:px-6 font-semibold text-slate-800">${escapeHtml(name)}</td>
+                  <td class="py-3.5 px-4 text-center text-slate-400">0 hari</td>
+                  <td class="py-3.5 px-4 text-center text-slate-400">-</td>
+                  <td class="py-3.5 px-4 text-center text-slate-400">-</td>
+                  <td class="py-3.5 px-4 text-center text-slate-400">0</td>
+                  <td class="py-3.5 px-4 text-center text-slate-400">-</td>
+                  <td class="py-3.5 px-4 sm:px-6 text-right text-slate-400">0%</td>
+                </tr>
+              `;
+            }
+
+            const tRawatibAvg = Math.round(rows.reduce((s, r) => s + calculateEntryStats(r).rawatibPercent, 0) / daysCount);
+            const tQuranDays = rows.filter((r) => r.quranRead).length;
+            const tQuranPct = Math.round((tQuranDays / daysCount) * 100);
+            const tLembar = roundHalf(rows.reduce((s, r) => s + calculateEntryStats(r).totalLembar, 0));
+            const tJuz = roundHalf(rows.reduce((s, r) => s + calculateEntryStats(r).totalJuz, 0));
+            const tTahajudDays = rows.filter((r) => r.tahajudDone).length;
+            const tTahajudPct = Math.round((tTahajudDays / daysCount) * 100);
+            const tOverallAvg = Math.round(rows.reduce((s, r) => s + calculateEntryStats(r).percentage, 0) / daysCount);
+
+            return `
+              <tr class="hover:bg-sky-50/50 transition-colors">
+                <td class="py-3.5 px-4 sm:px-6 font-bold text-sky-950">${escapeHtml(name)}</td>
+                <td class="py-3.5 px-4 text-center font-semibold text-slate-700">${daysCount} hari</td>
+                <td class="py-3.5 px-4 text-center">
+                  <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-sky-100 text-sky-900">${tRawatibAvg}%</span>
+                </td>
+                <td class="py-3.5 px-4 text-center">
+                  <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-900">${tQuranPct}% (${tQuranDays}/${daysCount})</span>
+                </td>
+                <td class="py-3.5 px-4 text-center text-xs font-semibold text-slate-700">
+                  ${formatNumberId(tLembar)} Lembar <span class="text-slate-400">(${formatNumberId(tJuz)} Juz)</span>
+                </td>
+                <td class="py-3.5 px-4 text-center">
+                  <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-50 text-indigo-900">${tTahajudPct}% (${tTahajudDays}/${daysCount})</span>
+                </td>
+                <td class="py-3.5 px-4 sm:px-6 text-right font-extrabold text-sky-800">${tOverallAvg}%</td>
+              </tr>
+            `;
+          })
+          .join('');
+      }
+
+      // Render tabel detail log harian
+      const countBadge = document.getElementById('detailLogCountBadge');
+      if (countBadge) countBadge.textContent = `${totalEntries} catatan`;
+
+      const detailBody = document.getElementById('detailLogBody');
+      if (detailBody) {
+        if (totalEntries === 0) {
+          detailBody.innerHTML = `
+            <tr>
+              <td colspan="7" class="py-10 px-6 text-center text-sm text-slate-500">
+                Belum ada data ceklist yang sesuai dengan filter saat ini.
+              </td>
+            </tr>
+          `;
+        } else {
+          detailBody.innerHTML = filtered
+            .map((entry) => {
+              const doneRawatib = RAWATIB_ITEMS.filter((item) => entry[item.key]).map((item) => item.short);
+              const rawatibText = doneRawatib.length > 0 ? doneRawatib.join(', ') : 'Tidak ada';
+              const quranText = entry.quranAmount > 0
+                ? `${formatNumberId(entry.quranAmount)} ${entry.quranUnit}`
+                : 'Tidak membaca';
+              const tahajudText = entry.tahajudDone
+                ? `Ya (${entry.tahajudRakaat} rakaat)`
+                : 'Tidak';
+
+              return `
+                <tr class="hover:bg-sky-50/40 transition-colors">
+                  <td class="py-3.5 px-4 sm:px-6 whitespace-nowrap text-xs font-semibold text-slate-700">${escapeHtml(formatIndonesianDate(entry.date))}</td>
+                  <td class="py-3.5 px-4 whitespace-nowrap font-bold text-sky-950">${escapeHtml(entry.teacher)}</td>
+                  <td class="py-3.5 px-4 text-xs text-slate-700 max-w-xs">${escapeHtml(rawatibText)}</td>
+                  <td class="py-3.5 px-4 whitespace-nowrap text-xs font-semibold ${entry.quranAmount > 0 ? 'text-amber-800' : 'text-slate-400'}">${escapeHtml(quranText)}</td>
+                  <td class="py-3.5 px-4 whitespace-nowrap text-xs font-semibold ${entry.tahajudDone ? 'text-sky-800' : 'text-slate-400'}">${escapeHtml(tahajudText)}</td>
+                  <td class="py-3.5 px-4 text-xs text-slate-600 max-w-xs truncate" title="${escapeHtml(entry.notes)}">${entry.notes ? escapeHtml(entry.notes) : '<span class="text-slate-300">-</span>'}</td>
+                  <td class="py-3.5 px-4 sm:px-6 whitespace-nowrap text-right">
+                    <button type="button" onclick="confirmDeleteEntry('${escapeHtml(entry.id)}', '${escapeHtml(entry.teacher)}', '${escapeHtml(entry.date)}')"
+                      class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-semibold text-rose-600 hover:bg-rose-50 border border-transparent hover:border-rose-200 transition-colors cursor-pointer">
+                      Hapus
+                    </button>
+                  </td>
+                </tr>
+              `;
+            })
+            .join('');
+        }
+      }
+    }
+
+    // =========================================================================
+    // AKSI ADMIN: HAPUS ENTRI, HAPUS SEMUA, DATA CONTOH & EXPORT CSV
+    // =========================================================================
+    window.confirmDeleteEntry = function confirmDeleteEntry(entryId, teacher, date) {
+      openConfirmModal(
+        'Hapus Catatan Harian',
+        `Hapus ceklist milik ${teacher} pada tanggal ${formatIndonesianDate(date)}?`,
+        async () => {
+          await deleteEntryFromCloud(entryId);
+          renderRecapDashboard();
+          showToast(`Catatan ${teacher} (${formatIndonesianDate(date)}) telah dihapus.`, 'success');
+        }
+      );
+    };
+
+    window.confirmClearAllEntries = function confirmClearAllEntries() {
+      if (state.entries.length === 0) {
+        showToast('Tidak ada data untuk dihapus.', 'info');
+        return;
+      }
+      openConfirmModal(
+        'Hapus Semua Data Ruang Ini',
+        `Seluruh ${state.entries.length} catatan pada ruang "${state.workspaceId}" akan dihapus permanen. Lanjutkan?`,
+        async () => {
+          await clearAllEntriesFromCloud();
+          renderRecapDashboard();
+          showToast('Semua data pada ruang ini telah dihapus.', 'success');
+        }
+      );
+    };
+
+    window.seedSampleData = async function seedSampleData() {
+      if (state.teachers.length === 0) {
+        showToast('Tambahkan nama ustadz/ustadzah dulu sebelum membuat data contoh.', 'info');
+        return;
+      }
+      const today = getTodayDateString();
+      const [y, m, d] = today.split('-').map(Number);
+      const makeDate = (offsetDays) => {
+        const dt = new Date(y, m - 1, d - offsetDays);
+        return `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, '0')}-${String(dt.getDate()).padStart(2, '0')}`;
+      };
+
+      const d0 = makeDate(0);
+      const d1 = makeDate(1);
+      const d2 = makeDate(2);
+
+      const samples = [
+        {
+          id: buildEntryId('Risman', d0),
+          teacher: 'Risman',
+          date: d0,
+          qobliyahSubuh: true,
+          qobliyahDzuhur: true,
+          bakdiyahDzuhur: true,
+          bakdiyahMaghrib: true,
+          bakdiyahIsya: true,
+          quranRead: true,
+          quranUnit: 'Lembar',
+          quranAmount: 5,
+          tahajudDone: true,
+          tahajudRakaat: 7,
+          notes: 'Tahajud sepertiga malam akhir',
+        },
+        {
+          id: buildEntryId('Marwazi', d0),
+          teacher: 'Marwazi',
+          date: d0,
+          qobliyahSubuh: true,
+          qobliyahDzuhur: true,
+          bakdiyahDzuhur: true,
+          bakdiyahMaghrib: true,
+          bakdiyahIsya: false,
+          quranRead: true,
+          quranUnit: 'Juz',
+          quranAmount: 0.5,
+          tahajudDone: true,
+          tahajudRakaat: 3,
+          notes: 'Witir 3 rakaat',
+        },
+        {
+          id: buildEntryId('Farizal', d0),
+          teacher: 'Farizal',
+          date: d0,
+          qobliyahSubuh: true,
+          qobliyahDzuhur: false,
+          bakdiyahDzuhur: true,
+          bakdiyahMaghrib: true,
+          bakdiyahIsya: true,
+          quranRead: true,
+          quranUnit: 'Lembar',
+          quranAmount: 2,
+          tahajudDone: false,
+          tahajudRakaat: 0,
+          notes: '',
+        },
+        {
+          id: buildEntryId('Irlan', d0),
+          teacher: 'Irlan',
+          date: d0,
+          qobliyahSubuh: true,
+          qobliyahDzuhur: true,
+          bakdiyahDzuhur: false,
+          bakdiyahMaghrib: true,
+          bakdiyahIsya: false,
+          quranRead: true,
+          quranUnit: 'Lembar',
+          quranAmount: 3,
+          tahajudDone: true,
+          tahajudRakaat: 5,
+          notes: 'Tilawah setelah Subuh',
+        },
+        {
+          id: buildEntryId('Musannip', d1),
+          teacher: 'Musannip',
+          date: d1,
+          qobliyahSubuh: true,
+          qobliyahDzuhur: true,
+          bakdiyahDzuhur: true,
+          bakdiyahMaghrib: true,
+          bakdiyahIsya: true,
+          quranRead: true,
+          quranUnit: 'Juz',
+          quranAmount: 1,
+          tahajudDone: true,
+          tahajudRakaat: 11,
+          notes: 'Qiyamul lail lengkap',
+        },
+        {
+          id: buildEntryId('Abdullah', d1),
+          teacher: 'Abdullah',
+          date: d1,
+          qobliyahSubuh: true,
+          qobliyahDzuhur: false,
+          bakdiyahDzuhur: true,
+          bakdiyahMaghrib: true,
+          bakdiyahIsya: true,
+          quranRead: true,
+          quranUnit: 'Lembar',
+          quranAmount: 4,
+          tahajudDone: false,
+          tahajudRakaat: 0,
+          notes: '',
+        },
+        {
+          id: buildEntryId('Hulaemi', d2),
+          teacher: 'Hulaemi',
+          date: d2,
+          qobliyahSubuh: true,
+          qobliyahDzuhur: true,
+          bakdiyahDzuhur: true,
+          bakdiyahMaghrib: false,
+          bakdiyahIsya: true,
+          quranRead: true,
+          quranUnit: 'Lembar',
+          quranAmount: 2,
+          tahajudDone: true,
+          tahajudRakaat: 3,
+          notes: 'Murojaah hafalan',
+        },
+      ];
+
+      samples.forEach((smp, i) => {
+        const t = state.teachers[i % state.teachers.length].name;
+        smp.teacher = t;
+        smp.id = buildEntryId(t, smp.date);
+      });
+
+      await batchWriteEntriesToCloud(samples);
+      renderRecapDashboard();
+      showToast('Data contoh asatidz berhasil ditambahkan.', 'success');
+    };
+
+    // =========================================================================
+    // EKSPOR REKAP KE PDF (SELURUHNYA BAHASA ARAB)
+    // =========================================================================
+    const AR_RAWATIB = {
+      qobliyahSubuh: 'قبلية الفجر',
+      qobliyahDzuhur: 'قبلية الظهر',
+      bakdiyahDzuhur: 'بعدية الظهر',
+      bakdiyahMaghrib: 'بعدية المغرب',
+      bakdiyahIsya: 'بعدية العشاء',
+    };
+
+    const PDF_CSS = `<style>
+      .pg{width:1100px;box-sizing:border-box;padding:26px 30px;background:#fff;direction:rtl;text-align:right;font-family:'Amiri','Noto Naskh Arabic',serif;color:#0f172a;line-height:1.7}
+      .pg *{box-sizing:border-box;letter-spacing:0}
+      .hd{background:#0284c7;color:#fff;border-radius:14px;padding:14px 22px;border-bottom:6px solid #eab308;text-align:center}
+      .hd h1{margin:0;font-size:30px;font-weight:700;line-height:1.5}
+      .hd p{margin:2px 0 0;font-size:19px}
+      .hd.sm{padding:8px 18px}.hd.sm h1{font-size:22px}
+      .meta{display:flex;justify-content:space-between;margin:12px 4px;font-size:18px;color:#334155}
+      .kpis{display:flex;gap:12px;margin:8px 0 16px}
+      .kpi{flex:1;border:1.5px solid #bae6fd;border-radius:12px;padding:8px 12px;background:#f0f9ff;text-align:center}
+      .kpi b{display:block;font-size:28px;color:#0369a1;line-height:1.5}
+      .kpi span{font-size:16px;color:#475569}
+      .pg h2{font-size:22px;color:#0c4a6e;margin:8px 0 10px;border-right:6px solid #eab308;padding-right:10px;font-weight:700}
+      .pg table{width:100%;border-collapse:collapse;font-size:17px}
+      .pg th{background:#0369a1;color:#fff;padding:7px 8px;border:1px solid #0c4a6e;font-weight:700;text-align:center}
+      .pg td{padding:6px 8px;border:1px solid #bae6fd;text-align:center;vertical-align:middle}
+      .pg tr:nth-child(even) td{background:#f0f9ff}
+      .pg td.n{font-weight:700;text-align:right}
+      .pg td.t{text-align:right}
+      .ft{display:flex;justify-content:space-between;margin-top:14px;font-size:15px;color:#64748b;border-top:1px solid #cbd5e1;padding-top:6px}
+      .sig{margin-top:26px;font-size:18px}
+      .sig div{display:inline-block;text-align:center;min-width:240px}
+    </style>`;
+
+    const arNum = (n, max = 2) => Number(n || 0).toLocaleString('ar-EG', { maximumFractionDigits: max });
+    const arPct = (n) => `${arNum(n, 0)}٪`;
+
+    function arDate(dateStr, long = true) {
+      if (!dateStr || !/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) return dateStr || '-';
+      const [y, m, d] = dateStr.split('-').map(Number);
+      return new Date(y, m - 1, d).toLocaleDateString('ar-EG', long
+        ? { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }
+        : { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+
+    function arTeacherName(name) {
+      const t = state.teachers.find((x) => x.name === name);
+      return t && t.nameAr ? t.nameAr : name;
+    }
+
+    function getArabicPeriodLabel() {
+      const type = document.getElementById('filterPeriodType')?.value || 'all';
+      const date = document.getElementById('filterDateInput')?.value || '';
+      const month = document.getElementById('filterMonthInput')?.value || '';
+      if (type === 'day' && date) return `بتاريخ: ${arDate(date)}`;
+      if (type === 'month' && month) {
+        const [y, m] = month.split('-').map(Number);
+        return `عن شهر: ${new Date(y, m - 1, 1).toLocaleDateString('ar-EG', { month: 'long', year: 'numeric' })}`;
+      }
+      return 'جميع الفترات';
+    }
+
+    function buildArabicPdfPages(filtered) {
+      const filterTeacher = document.getElementById('filterTeacherSelect')?.value || 'ALL';
+      const chunk = (arr, n) => {
+        const out = [];
+        for (let i = 0; i < arr.length; i += n) out.push(arr.slice(i, i + n));
+        return out;
+      };
+
+      // ---- KPI ----
+      const total = filtered.length;
+      const stats = filtered.map(calculateEntryStats);
+      const avgRawatib = total ? Math.round(stats.reduce((a, x) => a + x.rawatibPercent, 0) / total) : 0;
+      const quranDays = filtered.filter((e) => e.quranRead).length;
+      const tahajudDays = filtered.filter((e) => e.tahajudDone).length;
+      const sumLembar = roundHalf(stats.reduce((a, x) => a + x.totalLembar, 0));
+      const sumJuz = roundHalf(stats.reduce((a, x) => a + x.totalJuz, 0));
+
+      const teacherLabel = filterTeacher === 'ALL' ? 'جميع الأساتذة' : arTeacherName(filterTeacher);
+      const todayAr = arDate(getTodayDateString());
+
+      const headerFull = `
+        <div class="hd">
+          <h1>تقرير متابعة العبادات اليومية للأساتذة</h1>
+          <p>معهد جمال الدين الإسلامي – باجيك نياكا</p>
+        </div>
+        <div class="meta"><span>${escapeHtml(getArabicPeriodLabel())}</span><span>الأستاذ: ${escapeHtml(teacherLabel)}</span></div>
+        <div class="kpis">
+          <div class="kpi"><b>${arNum(total, 0)}</b><span>عدد السجلات</span></div>
+          <div class="kpi"><b>${arPct(avgRawatib)}</b><span>متوسط السنن الراتبة</span></div>
+          <div class="kpi"><b>${arPct(total ? Math.round((quranDays / total) * 100) : 0)}</b><span>قراءة القرآن (${arNum(sumLembar)} ورقة • ${arNum(sumJuz)} جزء)</span></div>
+          <div class="kpi"><b>${arPct(total ? Math.round((tahajudDays / total) * 100) : 0)}</b><span>قيام الليل</span></div>
+        </div>`;
+      const headerSmall = `<div class="hd sm"><h1>تقرير متابعة العبادات اليومية للأساتذة – ${escapeHtml(getArabicPeriodLabel())}</h1></div>`;
+
+      // ---- Ringkasan per guru ----
+      const names = getRecapTeacherNames(filtered, filterTeacher);
+      const sumRows = names.map((name) => {
+        const rows = filtered.filter((e) => e.teacher === name);
+        const n = rows.length;
+        if (!n) {
+          return `<tr><td class="n">${escapeHtml(arTeacherName(name))}</td><td>٠</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>`;
+        }
+        const st = rows.map(calculateEntryStats);
+        const rw = Math.round(st.reduce((a, x) => a + x.rawatibPercent, 0) / n);
+        const qd = rows.filter((r) => r.quranRead).length;
+        const td = rows.filter((r) => r.tahajudDone).length;
+        const lem = roundHalf(st.reduce((a, x) => a + x.totalLembar, 0));
+        const juz = roundHalf(st.reduce((a, x) => a + x.totalJuz, 0));
+        const all = Math.round(st.reduce((a, x) => a + x.percentage, 0) / n);
+        return `<tr><td class="n">${escapeHtml(arTeacherName(name))}</td><td>${arNum(n, 0)}</td><td>${arPct(rw)}</td><td>${arNum(qd, 0)} / ${arNum(n, 0)}</td><td>${arNum(lem)} ورقة (${arNum(juz)} جزء)</td><td>${arNum(td, 0)} / ${arNum(n, 0)}</td><td><b>${arPct(all)}</b></td></tr>`;
+      });
+      const sumHead = '<tr><th>الاسم</th><th>أيام التسجيل</th><th>السنن الراتبة</th><th>قراءة القرآن</th><th>إجمالي القراءة</th><th>قيام الليل</th><th>المتوسط العام</th></tr>';
+
+      // ---- Detail log ----
+      const detRows = filtered.map((e, i) => {
+        const rw = RAWATIB_ITEMS.filter((item) => e[item.key]).map((item) => AR_RAWATIB[item.key]).join('، ') || 'لا يوجد';
+        const quran = e.quranAmount > 0 ? `${arNum(e.quranAmount)} ${e.quranUnit === 'Juz' ? 'جزء' : 'ورقة'}` : 'لا يوجد';
+        const night = e.tahajudDone ? `نعم (${arNum(e.tahajudRakaat, 0)} ركعات)` : 'لا';
+        return `<tr><td>${escapeHtml(arDate(e.date, false))}</td><td class="n">${escapeHtml(arTeacherName(e.teacher))}</td><td class="t">${escapeHtml(rw)}</td><td>${escapeHtml(quran)}</td><td>${escapeHtml(night)}</td><td>${arPct(stats[i].percentage)}</td><td class="t">${e.notes ? escapeHtml(e.notes) : '—'}</td></tr>`;
+      });
+      const detHead = '<tr><th>التاريخ</th><th>الاسم</th><th>السنن الراتبة</th><th>قراءة القرآن</th><th>قيام الليل</th><th>النسبة</th><th>ملاحظات</th></tr>';
+
+      // ---- Susun halaman ----
+      const bodies = [];
+      const sumChunks = [sumRows.slice(0, 8), ...chunk(sumRows.slice(8), 14)];
+      sumChunks.forEach((rows, idx) => {
+        const head = idx === 0 ? headerFull : headerSmall;
+        const title = idx === 0 ? 'ملخص الأساتذة' : 'ملخص الأساتذة (تابع)';
+        bodies.push(`${head}<h2>${title}</h2><table><thead>${sumHead}</thead><tbody>${rows.join('')}</tbody></table>`);
+      });
+      chunk(detRows, 14).forEach((rows, idx) => {
+        bodies.push(`${headerSmall}<h2>سجل المتابعة اليومية${idx ? ' (تابع)' : ''}</h2><table><thead>${detHead}</thead><tbody>${rows.join('')}</tbody></table>`);
+      });
+      bodies[bodies.length - 1] += '<div class="sig"><div>مدير المعهد<br><br><br>................................</div></div>';
+
+      return bodies.map((body, i) =>
+        `${PDF_CSS}<div class="pg">${body}<div class="ft"><span>تاريخ الطباعة: ${escapeHtml(todayAr)}</span><span>صفحة ${arNum(i + 1, 0)} من ${arNum(bodies.length, 0)}</span></div></div>`
+      );
+    }
+
+    window.exportRecapToPdf = async function exportRecapToPdf() {
+      const filtered = getFilteredEntries();
+      if (filtered.length === 0) {
+        showToast('Tidak ada data untuk diexport.', 'info');
+        return;
+      }
+      if (!window.jspdf || !window.html2canvas) {
+        showToast('Library PDF belum termuat. Periksa koneksi internet lalu coba lagi.', 'error');
+        return;
+      }
+
+      const btn = document.getElementById('exportPdfBtn');
+      if (btn) btn.disabled = true;
+      showLoadingPopup('Sedang membuat PDF berbahasa Arab...', 'Membuat PDF');
+
+      let host = null;
+      try {
+        await Promise.all([
+          document.fonts.load('400 18px Amiri', 'معهد جمال الدين'),
+          document.fonts.load('700 18px Amiri', 'معهد جمال الدين'),
+        ]);
+        await document.fonts.ready;
+
+        const pages = buildArabicPdfPages(filtered);
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+        const PW = 297;
+        const PH = 210;
+        const M = 8;
+
+        host = document.createElement('div');
+        host.style.cssText = 'position:absolute;left:-20000px;top:0;width:1100px;background:#fff;';
+        document.body.appendChild(host);
+
+        for (let i = 0; i < pages.length; i++) {
+          host.innerHTML = pages[i];
+          await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+          const el = host.querySelector('.pg');
+          const canvas = await window.html2canvas(el, { scale: 2, backgroundColor: '#ffffff', useCORS: true });
+
+          let w = PW - M * 2;
+          let h = (canvas.height * w) / canvas.width;
+          if (h > PH - M * 2) {
+            h = PH - M * 2;
+            w = (canvas.width * h) / canvas.height;
+          }
+          pdf.addImage(canvas.toDataURL('image/jpeg', 0.92), 'JPEG', (PW - w) / 2, M, w, h);
+          if (i < pages.length - 1) pdf.addPage();
+        }
+
+        pdf.save(`rekap-asatidz-arab-${getTodayDateString()}.pdf`);
+        showToast('File PDF berbahasa Arab berhasil diunduh.', 'success');
+      } catch (_err) {
+        showToast('Gagal membuat PDF. Coba lagi atau muat ulang halaman.', 'error');
+      } finally {
+        if (host) host.remove();
+        if (btn) btn.disabled = false;
+      }
+    };
+
+    window.exportRecapToCsv = function exportRecapToCsv() {
+      const filtered = getFilteredEntries();
+      if (filtered.length === 0) {
+        showToast('Tidak ada data untuk diexport.', 'info');
+        return;
+      }
+
+      const headers = [
+        'Tanggal',
+        'Nama',
+        'Qobliyah Subuh',
+        'Qobliyah Dzuhur',
+        'Bakdiyah Dzuhur',
+        'Bakdiyah Maghrib',
+        'Bakdiyah Isya',
+        'Baca Al-Quran',
+        'Satuan Al-Quran',
+        'Jumlah Al-Quran',
+        'Shalat Malam',
+        'Rakaat Shalat Malam',
+        'Persentase (%)',
+        'Catatan',
+      ];
+
+      const rows = filtered.map((e) => {
+        const stats = calculateEntryStats(e);
+        return [
+          e.date,
+          e.teacher,
+          e.qobliyahSubuh ? 'Ya' : 'Tidak',
+          e.qobliyahDzuhur ? 'Ya' : 'Tidak',
+          e.bakdiyahDzuhur ? 'Ya' : 'Tidak',
+          e.bakdiyahMaghrib ? 'Ya' : 'Tidak',
+          e.bakdiyahIsya ? 'Ya' : 'Tidak',
+          e.quranRead ? 'Ya' : 'Tidak',
+          e.quranUnit,
+          e.quranAmount,
+          e.tahajudDone ? 'Ya' : 'Tidak',
+          e.tahajudRakaat,
+          stats.percentage,
+          e.notes || '',
+        ];
+      });
+
+      const csvContent = [headers, ...rows]
+        .map((row) => row.map((cell) => `"${String(cell ?? '').replace(/"/g, '""')}"`).join(','))
+        .join('\n');
+
+      const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `rekap-asatidz-rabbani-pontren-jb-${getTodayDateString()}.csv`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      showToast('File CSV berhasil diunduh.', 'success');
+    };
+
+    // =========================================================================
+    // PWA: PASANG SEBAGAI APLIKASI + SERVICE WORKER
+    // =========================================================================
+    let deferredInstallPrompt = null;
+
+    function isStandaloneMode() {
+      return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    }
+
+    function isIosDevice() {
+      const ua = navigator.userAgent || '';
+      return /iphone|ipad|ipod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    }
+
+    function setInstallButtonVisible(visible) {
+      const btn = document.getElementById('installAppBtn');
+      if (!btn) return;
+      btn.classList.toggle('hidden', !visible);
+      btn.classList.toggle('inline-flex', visible);
+    }
+
+    window.addEventListener('beforeinstallprompt', (event) => {
+      event.preventDefault();
+      deferredInstallPrompt = event;
+      if (!isStandaloneMode()) setInstallButtonVisible(true);
+    });
+
+    window.addEventListener('appinstalled', () => {
+      deferredInstallPrompt = null;
+      setInstallButtonVisible(false);
+      showPopup({
+        type: 'success',
+        title: 'Aplikasi Terpasang',
+        message: 'Aplikasi Asatidz Rabbani Pontren JB sudah ada di layar utama perangkat Anda.',
+        confirmText: 'Alhamdulillah',
+        autoClose: 3500,
+      });
+    });
+
+    window.handleInstallApp = async function handleInstallApp() {
+      if (deferredInstallPrompt) {
+        const promptEvent = deferredInstallPrompt;
+        deferredInstallPrompt = null;
+        promptEvent.prompt();
+        try {
+          const choice = await promptEvent.userChoice;
+          if (choice && choice.outcome === 'accepted') setInstallButtonVisible(false);
+        } catch (_err) {
+          // Abaikan
+        }
+        return;
+      }
+
+      if (isIosDevice()) {
+        showPopup({
+          type: 'info',
+          title: 'Pasang di iPhone / iPad',
+          message: '1. Buka halaman ini di Safari.\n2. Ketuk tombol Bagikan (kotak dengan panah ke atas).\n3. Pilih "Tambah ke Layar Utama".\n4. Ketuk "Tambah".',
+          confirmText: 'Mengerti',
+        });
+        return;
+      }
+
+      showPopup({
+        type: 'info',
+        title: 'Pasang Aplikasi',
+        message: 'Buka menu browser (titik tiga di kanan atas), lalu pilih "Instal aplikasi" atau "Tambahkan ke layar utama".',
+        confirmText: 'Mengerti',
+      });
+    };
+
+    function setupPwa() {
+      if (!isStandaloneMode() && isIosDevice()) {
+        setInstallButtonVisible(true); // iOS tidak punya prompt otomatis, tampilkan panduan
+      }
+      if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+        navigator.serviceWorker.register('sw.js').catch(() => {
+          // Abaikan: aplikasi tetap berjalan normal tanpa mode offline
+        });
+      }
+    }
+
+    // =========================================================================
+    // INISIALISASI APLIKASI
+    // =========================================================================
+    document.addEventListener('DOMContentLoaded', () => {
+      const today = getTodayDateString();
+      const month = getCurrentMonthString();
+
+      const dateInput = document.getElementById('dateInput');
+      const filterDateInput = document.getElementById('filterDateInput');
+      const filterMonthInput = document.getElementById('filterMonthInput');
+
+      if (dateInput) dateInput.value = today;
+      if (filterDateInput) filterDateInput.value = today;
+      if (filterMonthInput) filterMonthInput.value = month;
+
+      setupModals();
+      applyBannerImage();
+      setupPwa();
+      window.onFilterPeriodTypeChange();
+      setTahajudStatus(false, false);
+      handleQuranUnitChange(false);
+      updateProgressIndicator();
+      initSupabaseSync();
+    });
+  </script>
+</body>
+</html>
